@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>플레이툰 워크스페이스 문서 통합 인덱스 · V1.3.0</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" rel="stylesheet">
+<style>
+:root{
+  --maroon:#6B1F1F; --teal:#1D9E75; --teal-soft:#E1F5EE; --teal-d:#0F6E56;
+  --ink:#1A1417; --ink-2:#544A4D; --ink-3:#8A8084;
+  --line:#E7E2E4; --line-2:#F1EEEF; --bg:#FAF8F9; --surf:#FFFFFF; --surf-2:#F6F3F5;
+  --font:"Pretendard Variable",-apple-system,system-ui,sans-serif;
+  --mono:"SFMono-Regular",Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;height:100vh;overflow:hidden}
+.top{height:58px;flex:none;background:var(--ink);color:#fff;display:flex;align-items:center;gap:14px;padding:0 22px}
+.top .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--teal),var(--maroon));display:grid;place-items:center;font-weight:800;font-size:15px}
+.top .ttl{font-weight:800;letter-spacing:-.02em;font-size:15.5px}
+.top .ttl small{display:block;font-size:10.5px;font-weight:600;color:rgba(255,255,255,.6);line-height:1}
+.top .ver{font-size:11px;font-weight:700;background:var(--teal);padding:3px 9px;border-radius:999px}
+.top .sp{flex:1}
+.top .hint{font-size:11.5px;color:rgba(255,255,255,.55)}
+.body{flex:1;display:grid;grid-template-columns:300px 1fr;min-height:0}
+.side{background:var(--surf);border-right:1px solid var(--line);padding:18px 14px;overflow-y:auto}
+.side h6{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase;margin:6px 8px 10px}
+.navitem{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:10px;cursor:pointer;text-decoration:none;margin-bottom:6px;border:1px solid transparent;transition:.14s}
+.navitem:hover{background:var(--surf-2)}
+.navitem.on{background:var(--teal-soft);border-color:var(--teal)}
+.navitem .ix{width:22px;height:22px;border-radius:6px;background:var(--surf-2);color:var(--ink-3);font-size:11px;font-weight:800;display:grid;place-items:center;flex:none;margin-top:1px}
+.navitem.on .ix{background:var(--teal-d);color:#fff}
+.navitem .meta{display:flex;flex-direction:column;gap:2px}
+.navitem .tt{font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3}
+.navitem .vv{font-size:11px;color:var(--ink-3);line-height:1.4}
+.side .grp{margin-top:18px}
+.side .doclink{display:block;font-size:11.5px;color:var(--teal-d);text-decoration:none;padding:6px 12px;font-weight:600}
+.side .doclink:hover{text-decoration:underline}
+.view{position:relative;background:var(--bg);min-height:0;display:flex;flex-direction:column}
+.viewbar{height:42px;flex:none;border-bottom:1px solid var(--line);background:var(--surf);display:flex;align-items:center;gap:12px;padding:0 16px}
+.viewbar .cur{font-size:13px;font-weight:700}
+.viewbar .cur span{color:var(--ink-3);font-weight:500;margin-left:8px}
+.viewbar .sp{flex:1}
+.viewbar .open{font-size:12px;font-weight:700;color:var(--teal-d);background:var(--teal-soft);border:none;padding:6px 13px;border-radius:7px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.viewbar .open:hover{background:#CFEee2}
+.frames{flex:1;position:relative;min-height:0}
+.frame{position:absolute;inset:0;width:100%;height:100%;border:none;background:#fff}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="logo">P</div>
+  <div class="ttl">플레이툰 워크스페이스 문서 통합 인덱스<small>IA V1.3.0 · 워크스페이스 화면(N-4) · DB·API(N-5)</small></div>
+  <span class="ver">V1.3.0</span>
+  <div class="sp"></div>
+  <div class="hint">좌측에서 문서를 선택하세요 · 단일 파일(외부 의존 없음)</div>
+</div>
+<div class="body">
+  <nav class="side">
+    <h6>워크스페이스 · 공통 문서 3종</h6>
+    <a class="navitem on" data-key="ia">
+      <span class="ix">1</span>
+      <span class="meta"><span class="tt">통합 정보 구조 (IA)</span><span class="vv">V1.3.0 · 작가 도구 통합 IA — 세 인덱스 공통</span></span>
+    </a>
+<a class="navitem" data-key="n4">
+      <span class="ix">2</span>
+      <span class="meta"><span class="tt">N-4 워크스페이스 화면 SB</span><span class="vv">V1.0.0 · 제작 환경·팀 협업 · 7영역 + 에디터 진입</span></span>
+    </a>
+<a class="navitem" data-key="n5">
+      <span class="ix">3</span>
+      <span class="meta"><span class="tt">N-5 DB·API 명세</span><span class="vv">V1.3.0 · 데이터 계약 — 가격·위임·코인 (공통)</span></span>
+    </a>
+
+    <div class="grp">
+      <h6>관련 (별도 인덱스)</h6>
+      <a class="doclink" href="https://playtoon-admin-index.vercel.app" target="_blank" rel="noopener">· 어드민 문서 인덱스로 이동 ↗</a>
+      <a class="doclink" href="https://playtoon-platform-index.vercel.app" target="_blank" rel="noopener">· 플랫폼 문서 인덱스로 이동 ↗</a>
+    </div>
+  </nav>
+  <section class="view">
+    <div class="viewbar">
+      <div class="cur" id="cur">통합 정보 구조 (IA) <span>V1.3.0</span></div>
+      <div class="sp"></div>
+      <button class="open" id="openbtn">↗ 새 탭에서 열기</button>
+    </div>
+    <div class="frames" id="frames">
+      <iframe class="frame" id="fr_ia" title="통합 정보 구조 (IA)" srcdoc="<!DOCTYPE html>
+<html lang=&quot;ko&quot;>
+<head>
+<meta charset=&quot;UTF-8&quot;>
+<title>플레이툰 작가 도구 통합 정보 구조 (IA) · V1.3.0</title>
+<meta name=&quot;viewport&quot; content=&quot;width=1280&quot;>
+<link href=&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css&quot; rel=&quot;stylesheet&quot;>
+<style>
+:root {
+  --brand-red: #DC3545;
+  --brand-red-dark: #B82838;
+  --brand-red-soft: #FCE7E9;
+  --maroon: #6B1F1F;
+  --lavender: #A99DE4;
+  --lavender-dark: #8E80D3;
+  --lavender-soft: #EEEBF9;
+  --yellow: #FACC15;
+  --yellow-soft: #FFFBE6;
+  --success: #10B981;
+  --success-soft: #D1FAE5;
+  --warn: #F59E0B;
+  --warn-soft: #FEF3C7;
+  --error: #EF4444;
+  --error-soft: #FEE2E2;
+  --info: #3B82F6;
+  --info-soft: #DBEAFE;
+  --coral: #FB923C;
+  --coral-soft: #FFEDD5;
+  --text: #111827;
+  --text-sub: #6B7280;
+  --text-muted: #9CA3AF;
+  --bg: #FFFFFF;
+  --bg-soft: #F8F9FA;
+  --bg-softer: #F3F4F6;
+  --border: #E5E7EB;
+  --border-soft: #F3F4F6;
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 8px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+  background: var(--bg-soft);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.alert-banner {
+  background: #1F1F1F;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.alert-banner .pill {
+  background: var(--brand-red);
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.alert-banner .cta {
+  background: white;
+  color: var(--text);
+  padding: 4px 12px;
+  border-radius: var(--r-sm);
+  font-size: 12px;
+  font-weight: 700;
+}
+.doc-header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 28px 48px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.doc-header .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+.doc-header .title { font-size: 18px; font-weight: 600; }
+.doc-header .meta { margin-left: auto; display: flex; gap: 16px; font-size: 12px; color: var(--text-sub); }
+.doc-header .meta strong { color: var(--text); font-weight: 600; }
+.layout { display: grid; grid-template-columns: 240px 1fr; max-width: 1680px; margin: 0 auto; }
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  background: white;
+  border-right: 1px solid var(--border);
+  padding: 24px 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.sidebar h3 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  padding: 0 24px 8px;
+  margin-top: 20px;
+}
+.sidebar h3:first-of-type { margin-top: 0; }
+.sidebar a {
+  display: block;
+  padding: 7px 24px 7px 36px;
+  font-size: 13px;
+  color: var(--text-sub);
+  text-decoration: none;
+  position: relative;
+}
+.sidebar a:hover { background: var(--bg-soft); color: var(--text); }
+.sidebar a.active {
+  color: var(--brand-red);
+  font-weight: 600;
+  background: var(--brand-red-soft);
+}
+.sidebar a.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--brand-red);
+}
+.sidebar a .num {
+  display: inline-block;
+  width: 28px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-left: -22px;
+}
+.sidebar a.active .num { color: var(--brand-red); }
+.main { padding: 32px 48px 80px; max-width: 1340px; }
+.chapter-divider {
+  margin: 48px 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+.chapter-divider:first-of-type { margin-top: 0; }
+.chapter-divider .num {
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.chapter-divider .title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.chapter-divider .sub {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+}
+.section-intro {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+.section-intro h2 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+.section-intro p { color: var(--text-sub); font-size: 13px; line-height: 1.7; }
+.section-intro .pills { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+.pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--bg-soft);
+  color: var(--text-sub);
+}
+.pill.red { background: var(--brand-red-soft); color: var(--brand-red-dark); }
+.pill.lavender { background: var(--lavender-soft); color: var(--lavender-dark); }
+.pill.green { background: var(--success-soft); color: #065F46; }
+.pill.coral { background: var(--coral-soft); color: #9A3412; }
+.pill.maroon { background: var(--brand-red-soft); color: var(--maroon); }
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.card-header {
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.card-header .badge {
+  background: var(--brand-red);
+  color: white;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--r-sm);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  font-family: 'JetBrains Mono', monospace;
+}
+.card-header .badge.lavender { background: var(--lavender); }
+.card-header .badge.maroon { background: var(--maroon); }
+.card-header .badge.dark { background: var(--text); }
+.card-header .badge.coral { background: var(--coral); }
+.card-header .name { font-size: 15px; font-weight: 700; }
+.card-header .ko { font-size: 13px; color: var(--text-sub); }
+.card-header .source { margin-left: auto; font-size: 11px; color: var(--text-muted); }
+.card-body { padding: 20px 22px; }
+.card-body p { font-size: 13px; color: var(--text-sub); line-height: 1.7; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 8px 0;
+}
+table th {
+  text-align: left;
+  background: var(--bg-soft);
+  color: var(--text);
+  padding: 8px 10px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-soft);
+  vertical-align: top;
+  color: var(--text-sub);
+  font-size: 12px;
+  line-height: 1.5;
+}
+table td.col {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--text);
+}
+table .y { color: var(--success); font-weight: 700; text-align: center; }
+table .n { color: var(--text-muted); text-align: center; }
+table .mv { color: var(--brand-red); font-weight: 700; text-align: center; }
+table .new-mark {
+  background: var(--brand-red);
+  color: white;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+ul.list, ol.list {
+  font-size: 13px;
+  color: var(--text-sub);
+  padding-left: 20px;
+  line-height: 1.8;
+}
+ul.list li, ol.list li { margin: 4px 0; }
+ul.list code, ol.list code {
+  background: var(--bg-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--brand-red-dark);
+}
+
+.ia-tree {
+  background: var(--bg-softer);
+  padding: 20px 24px;
+  border-radius: var(--r-md);
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  white-space: pre;
+  overflow-x: auto;
+  color: var(--text);
+}
+.ia-tree .new { color: var(--brand-red); font-weight: 700; }
+.ia-tree .keep { color: var(--text-muted); }
+.ia-tree .head { color: var(--maroon); font-weight: 700; }
+.ia-tree .move { color: var(--lavender-dark); font-weight: 700; }
+
+.callout {
+  border-left: 3px solid var(--brand-red);
+  background: var(--brand-red-soft);
+  padding: 12px 16px;
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  margin: 12px 0;
+  font-size: 12px;
+  color: var(--text);
+}
+.callout.lavender { border-color: var(--lavender); background: var(--lavender-soft); }
+.callout.green { border-color: var(--success); background: var(--success-soft); }
+.callout.coral { border-color: var(--coral); background: var(--coral-soft); }
+.callout.maroon { border-color: var(--maroon); background: #FCE7E9; }
+
+.flowbar { display:flex; align-items:stretch; gap:0; margin:14px 0; flex-wrap:wrap; }
+.flowbar .b { flex:1; min-width:120px; border:1px solid var(--border); border-radius:var(--r-md); padding:12px 14px; background:var(--bg-soft); }
+.flowbar .b.red { border-color:var(--brand-red); background:var(--brand-red-soft); }
+.flowbar .b.lav { border-color:var(--lavender); background:var(--lavender-soft); }
+.flowbar .b.coral { border-color:var(--coral); background:var(--coral-soft); }
+.flowbar .b .h { font-size:13px; font-weight:700; color:var(--text); }
+.flowbar .b .d { font-size:11px; color:var(--text-sub); margin-top:3px; }
+.flowbar .ar { align-self:center; color:var(--text-muted); font-size:18px; padding:0 8px; }
+
+.doc-footer {
+  background: var(--text);
+  color: white;
+  padding: 24px 48px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.9;
+}
+.doc-footer strong { color: var(--brand-red); margin-right: 4px; }
+.doc-footer .meta-line { margin-top: 6px; font-size: 11px; opacity: 0.65; }
+</style>
+</head>
+<body>
+
+<div class=&quot;alert-banner&quot;>
+  <span class=&quot;pill&quot;>IA</span>
+  <span>작가 도구 통합 정보 구조 정의서 — 워크스페이스 · 어드민 · 에디터</span>
+  <span class=&quot;cta&quot;>V1.3.0</span>
+</div>
+
+<header class=&quot;doc-header&quot;>
+  <div class=&quot;logo&quot;>PlayToon</div>
+  <div class=&quot;title&quot;>작가 도구 통합 정보 구조 (IA)</div>
+  <div class=&quot;meta&quot;>
+    <span><strong>workspace · admin · editor</strong></span>
+    <span><strong>2026.06.10</strong></span>
+    <span>개발TF · 디자인팀 전달용</span>
+  </div>
+</header>
+
+<div class=&quot;layout&quot;>
+
+<nav class=&quot;sidebar&quot;>
+  <h3>문서 안내</h3>
+  <a href=&quot;#info&quot; class=&quot;active&quot;><span class=&quot;num&quot;>@</span>문서 정보</a>
+
+  <h3>본문 7장</h3>
+  <a href=&quot;#ch1&quot;><span class=&quot;num&quot;>1</span>시스템 개요 · 2-Web</a>
+  <a href=&quot;#ch2&quot;><span class=&quot;num&quot;>2</span>워크스페이스 IA</a>
+  <a href=&quot;#ch3&quot;><span class=&quot;num&quot;>3</span>어드민 IA</a>
+  <a href=&quot;#ch4&quot;><span class=&quot;num&quot;>4</span>어드민 작가 작업 흐름</a>
+  <a href=&quot;#ch5&quot;><span class=&quot;num&quot;>5</span>권한 매트릭스</a>
+  <a href=&quot;#ch6&quot;><span class=&quot;num&quot;>6</span>시스템 연동 흐름</a>
+  <a href=&quot;#ch7&quot;><span class=&quot;num&quot;>7</span>다음 단계</a>
+
+  <h3>부록</h3>
+  <a href=&quot;#appx&quot;><span class=&quot;num&quot;>A</span>변경 이력</a>
+</nav>
+
+<main class=&quot;main&quot;>
+
+<!-- ─── 문서 정보 ─── -->
+<section class=&quot;section-intro&quot; id=&quot;info&quot;>
+  <h2>작가 도구 통합 IA 정의서 (V1.3.0)</h2>
+  <p>플레이툰 작가 도구는 <strong>에디터</strong>(제작) · <strong>워크스페이스</strong>(제작 환경·팀 협업) · <strong>어드민</strong>(작품 운영)의 세 표면으로 구성된다. 본 문서는 워크스페이스와 어드민의 정보 구조, 그리고 작가가 작품을 운영하는 전 과정을 정의한다. 이 문서 하나로 구현에 필요한 화면 구조·권한·데이터 흐름을 모두 담는다.</p>
+  <div class=&quot;pills&quot;>
+    <span class=&quot;pill red&quot;>V1.3.0 · 2026.06.10</span>
+    <span class=&quot;pill lavender&quot;>어드민 계정 role 자동 분기</span>
+    <span class=&quot;pill green&quot;>2-Web 역할 분리</span>
+    <span class=&quot;pill coral&quot;>개발TF · 디자인팀 전달용</span>
+  </div>
+</section>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge dark&quot;>@</span>
+    <span class=&quot;name&quot;>이 문서를 읽는 법</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <p>1~3장은 세 표면의 역할과 각 표면의 메뉴 구조(IA)를 정의한다. 4장은 작가가 어드민에서 작품을 운영하는 실제 흐름, 5장은 권한 모델, 6장은 표면 간 데이터 책임 분담이다. 구현 착수에 필요한 모든 정의는 본문에 있으며, 이 결정에 이르기까지의 과거 버전 변경 맥락은 <strong>부록 A</strong>에 별도로 정리했다(구현에는 불필요).</p>
+  </div>
+</div>
+
+
+<!-- ─── 1장 ─── -->
+<div class=&quot;chapter-divider&quot; id=&quot;ch1&quot;>
+  <span class=&quot;num&quot;>1</span>
+  <span class=&quot;title&quot;>시스템 개요 — 2-Web 역할</span>
+  <span class=&quot;sub&quot;>제작 · 운영</span>
+</div>
+
+<section class=&quot;section-intro&quot;>
+  <h2>&quot;만들기&quot;와 &quot;운영하기&quot;의 분리</h2>
+  <p>작가는 에디터로 작품을 제작하고, 그 결과물을 어드민에서 운영(업로드·검수·가격·정산)한다. 워크스페이스는 제작에 필요한 환경 세팅과 팀 협업을 담당한다. 세 표면의 책임이 명확히 갈린다.</p>
+</section>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge&quot;>1-1</span>
+    <span class=&quot;name&quot;>3개 표면의 역할</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <div class=&quot;flowbar&quot;>
+      <div class=&quot;b lav&quot;><div class=&quot;h&quot;>에디터</div><div class=&quot;d&quot;>제작·연출·게이트 심기<br>product_id 발행</div></div>
+      <div class=&quot;ar&quot;>→</div>
+      <div class=&quot;b&quot;><div class=&quot;h&quot;>워크스페이스</div><div class=&quot;d&quot;>제작 환경·팀 협업<br>(만들기 위한 도구)</div></div>
+      <div class=&quot;ar&quot;>→</div>
+      <div class=&quot;b red&quot;><div class=&quot;h&quot;>어드민</div><div class=&quot;d&quot;>업로드·검수·가격·정산·위임<br>(운영하기 위한 도구)</div></div>
+    </div>
+    <table style=&quot;margin-top:12px;&quot;>
+      <tr><th style=&quot;width:16%&quot;>표면</th><th style=&quot;width:38%&quot;>책임</th><th>도메인</th></tr>
+      <tr><td class=&quot;col&quot;>에디터</td><td>제작, 게이트 위치·분기·연출, product_id 발행</td><td>editor.playtoon.io</td></tr>
+      <tr><td class=&quot;col&quot;>워크스페이스</td><td>제작 환경 세팅, 팀·멤버 협업, 에셋, 구독, 에디터 진입</td><td>workspace.playtoon.io</td></tr>
+      <tr><td class=&quot;col&quot;>어드민</td><td>작품 운영 전반 — 업로드·검수·가격·정산·위임. role 자동 분기</td><td>admin.playtoon.io</td></tr>
+    </table>
+    <div class=&quot;callout coral&quot; style=&quot;margin-top:12px;&quot;>
+      <strong>&quot;파트너 어드민&quot;은 별도 앱이 아니다.</strong> 운영·개인·CP가 같은 어드민에 로그인하고, 계정 role에 따라 보이는 화면이 자동으로 갈린다. 개인 작가도 어드민에서 자기 작품을 운영한다.
+    </div>
+  </div>
+</div>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge&quot;>1-2</span>
+    <span class=&quot;name&quot;>설계 3대 원칙</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <table>
+      <tr><th style=&quot;width:25%&quot;>원칙</th><th>설명</th></tr>
+      <tr><td class=&quot;col&quot;>원칙 1<br><span style=&quot;color:var(--brand-red);font-weight:700;&quot;>운영 일원화</span></td><td>작품 생성·메타·업로드·게이트 가격·검수·정산·위임 발급 — 작가의 모든 운영 작업은 어드민 한 곳에서 완결한다. 작품은 에디터 저장 즉시 플랫폼 DB에 적재되므로, 운영은 그 DB를 다루는 어드민에서 처리한다.</td></tr>
+      <tr><td class=&quot;col&quot;>원칙 2<br><span style=&quot;color:var(--brand-red);font-weight:700;&quot;>제작 ↔ 운영 분리</span></td><td>워크스페이스는 &quot;만들기 위한 도구&quot;(제작 환경·팀 협업), 어드민은 &quot;운영하기 위한 도구&quot;. 두 도구의 책임이 칼같이 갈린다.</td></tr>
+      <tr><td class=&quot;col&quot;>원칙 3<br><span style=&quot;color:var(--brand-red);font-weight:700;&quot;>role 자동 분기 + Author 불변</span></td><td>어드민 로그인 시 계정 role(운영/개인 author/CP author/CP accounting/CP master)로 화면 자동 분기. 단 작품의 author는 팀장 고정(P-4).</td></tr>
+    </table>
+  </div>
+</div>
+
+
+<!-- ─── 2장 ─── -->
+<div class=&quot;chapter-divider&quot; id=&quot;ch2&quot;>
+  <span class=&quot;num&quot;>2</span>
+  <span class=&quot;title&quot;>워크스페이스 IA</span>
+  <span class=&quot;sub&quot;>제작 환경 허브</span>
+</div>
+
+<section class=&quot;section-intro&quot;>
+  <h2>워크스페이스의 구성</h2>
+  <p>워크스페이스는 제작 환경과 팀 협업을 담당한다. 작품 운영(업로드·검수·가격·위임)은 어드민에서 처리하므로, 워크스페이스에는 포함되지 않는다.</p>
+</section>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge&quot;>2-1</span>
+    <span class=&quot;name&quot;>워크스페이스 IA 다이어그램</span>
+    <span class=&quot;source&quot;>텍스트 트리</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+<div class=&quot;ia-tree&quot;><span class=&quot;head&quot;>workspace.playtoon.io</span>  <span class=&quot;keep&quot;>— 만들기 위한 도구</span>
+│
+├── ① 로그인·인증 <span class=&quot;keep&quot;>(어드민과 SSO 공유)</span>
+│
+├── ② 대시보드
+│   ├── 프로젝트 썸네일 그리드
+│   ├── 최근 작업 내역
+│   └── 빠른 실행 (에디터 진입)
+│
+├── ③ 프로젝트 관리 <span class=&quot;keep&quot;>(제작 파일 중심)</span>
+│   ├── 프로젝트 목록
+│   ├── 신규 프로젝트 생성 (제작 시작 · 빈 캔버스)
+│   ├── 프로젝트 상세 (메타·복제·삭제)
+│   └── 버전 관리 (Auto-save · 스냅샷)
+│
+├── ④ 에셋 라이브러리
+│   └── 팀 공용 / 개인 · 6개 카테고리
+│
+├── ⑤ 팀·멤버 관리
+│   ├── 멤버 목록·권한 조회
+│   ├── 멤버 초대 (4-role)
+│   └── 멤버 관리 (권한 변경·내보내기)
+│
+├── ⑥ 요금제·결제 <span class=&quot;keep&quot;>(SaaS 구독)</span>
+│
+├── ⑦ 워크스페이스 설정 <span class=&quot;keep&quot;>(제작 환경)</span>
+│
+└── ⑧ <span class=&quot;head&quot;>외부 진입</span> — 에디터 (editor.playtoon.io)
+    └── Access Token + project.json + Handshake</div>
+  </div>
+</div>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge&quot;>2-2</span>
+    <span class=&quot;name&quot;>워크스페이스 범위 경계</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <p>워크스페이스는 제작과 협업까지만 책임진다. 다음 작업은 어드민에서 처리한다 — 작품 등록·회차 업로드·게시 설정, 게이트/본편 가격, 검수 제출·상태 추적·반려·예약 공개·발행 이력, 위임 발급·회수·대리 발행. 신규 프로젝트 생성은 워크스페이스에 있으나 &quot;제작 시작&quot;(빈 캔버스) 의미이며, 발행을 전제로 한 작품 등록·운영과는 별개다.</p>
+    <div class=&quot;callout lavender&quot; style=&quot;margin-top:8px;&quot;>
+      <strong>L1 메이커 협업 권한</strong>(Owner·Editor·Commenter·Viewer)은 워크스페이스의 팀·멤버 관리에서 부여된다. 이는 제작 협업 권한이며, 작품 운영 권한(L2 위임·L3 AUTHOR)과는 레이어가 다르다 (5장 참조).
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── 3장 ─── -->
+<div class=&quot;chapter-divider&quot; id=&quot;ch3&quot;>
+  <span class=&quot;num&quot;>3</span>
+  <span class=&quot;title&quot;>어드민 IA</span>
+  <span class=&quot;sub&quot;>role 자동 분기</span>
+</div>
+
+<section class=&quot;section-intro&quot;>
+  <h2>단일 어드민, 계정 role로 분기</h2>
+  <p>운영·개인 작가·CP가 같은 어드민(admin.playtoon.io)에 로그인하고, 계정 role에 따라 메뉴와 데이터 범위가 자동으로 갈린다. 작가의 업로드·검수·가격·정산·위임이 모두 여기서 일어난다.</p>
+</section>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge coral&quot;>3-1</span>
+    <span class=&quot;name&quot;>어드민 IA 다이어그램</span>
+    <span class=&quot;source&quot;>텍스트 트리</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+<div class=&quot;ia-tree&quot;><span class=&quot;head&quot;>admin.playtoon.io</span>  <span class=&quot;keep&quot;>— 운영하기 위한 도구 (role 자동 분기)</span>
+│
+├── ⓐ 로그인 → <span class=&quot;new&quot;>role 판별</span> (운영 / 개인 author / CP author / CP accounting / CP master)
+│
+├── ① 작품·회차 관리
+│   ├── 작품(Series) 등록·메타
+│   ├── 회차(Episodes) 업로드·게시 설정
+│   ├── 원고·미디어(Media_Files) 관리
+│   └── 게이트 상품 가격 (Interactive_Elements.price_cash · 작가 희망가)
+│
+├── ② 검수·발행
+│   ├── 검수 제출 (6-Step)
+│   ├── 검수 상태 추적 (5상태)
+│   ├── 반려 사유·재제출
+│   ├── 가격 최종 조정 <span class=&quot;new&quot;>(운영이 희망가 → 확정가)</span>
+│   ├── 예약 공개 설정
+│   └── 발행 이력·버전 비교
+│
+├── ③ 위임 관리
+│   ├── 위임 발급 (6대 원칙 P-1~P-6)
+│   ├── 위임 목록·연장·회수
+│   └── 대리 발행 (위임받은 작품)
+│
+├── ④ 정산·계약
+│   ├── 정산 리포트 (Settlement_Reports)
+│   ├── 계약·RS·MG (Contracts)
+│   └── 세금계산서·지급
+│
+├── ⑤ 운영 도구 <span class=&quot;keep&quot;>(운영 role 전용)</span>
+│   ├── CS 통합 (환불·재화 조정)
+│   ├── 통계·매출 대시보드
+│   └── 배너·프로모션
+│
+└── ⑥ 시스템 <span class=&quot;keep&quot;>(권한·로그)</span>
+    └── 액션 로그 · 권한 그룹</div>
+  </div>
+</div>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge coral&quot;>3-2</span>
+    <span class=&quot;name&quot;>role별 보이는 영역</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <table>
+      <tr><th>영역</th><th style=&quot;text-align:center;&quot;>개인 author</th><th style=&quot;text-align:center;&quot;>CP author</th><th style=&quot;text-align:center;&quot;>CP accounting</th><th style=&quot;text-align:center;&quot;>CP master</th><th style=&quot;text-align:center;&quot;>운영</th></tr>
+      <tr><td>작품·회차 관리</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;n&quot;>×</td><td class=&quot;y&quot;>●*</td><td class=&quot;y&quot;>●</td></tr>
+      <tr><td>검수 제출</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;n&quot;>×</td><td class=&quot;n&quot;>위임/정책</td><td class=&quot;n&quot;>×</td></tr>
+      <tr><td>가격 희망가 입력</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;n&quot;>×</td><td class=&quot;y&quot;>●</td><td class=&quot;n&quot;>×</td></tr>
+      <tr><td>가격 최종 확정</td><td class=&quot;n&quot;>×</td><td class=&quot;n&quot;>×</td><td class=&quot;n&quot;>×</td><td class=&quot;n&quot;>×</td><td class=&quot;y&quot;>● (검수 시)</td></tr>
+      <tr><td>위임 발급</td><td>본인 팀</td><td>본인 팀</td><td class=&quot;n&quot;>×</td><td class=&quot;y&quot;>회사 전체</td><td class=&quot;n&quot;>×</td></tr>
+      <tr><td>정산·계약</td><td>본인 조회</td><td>본인 조회</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td></tr>
+      <tr><td>CS·통계·프로모션</td><td class=&quot;n&quot;>×</td><td class=&quot;n&quot;>×</td><td class=&quot;n&quot;>×</td><td class=&quot;n&quot;>×</td><td class=&quot;y&quot;>●</td></tr>
+    </table>
+    <p style=&quot;font-size:11px;color:var(--text-muted);margin-top:8px;&quot;>* CP master의 작품 직접 편집은 권장 X (관제 목적). ** L3 AUTHOR 역할(계정 시스템 V1.1.0)과 정합.</p>
+  </div>
+</div>
+
+
+<!-- ─── 4장 ─── -->
+<div class=&quot;chapter-divider&quot; id=&quot;ch4&quot;>
+  <span class=&quot;num&quot;>4</span>
+  <span class=&quot;title&quot;>어드민 작가 작업 흐름</span>
+  <span class=&quot;sub&quot;>업로드 → 검수</span>
+</div>
+
+<section class=&quot;section-intro&quot;>
+  <h2>작가가 어드민에서 끝내는 흐름</h2>
+  <p>에디터에서 제작이 끝나면, 작가는 어드민에서 작품을 등록·업로드하고 가격 희망가를 입력한 뒤 검수를 제출한다. 가격은 검수 단계에서 운영이 최종 확정한다. 위임받은 팀원도 동일 어드민에서 작업한다.</p>
+</section>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge coral&quot;>4-1</span>
+    <span class=&quot;name&quot;>어드민 작가 작업 6-Step</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <div class=&quot;flowbar&quot;>
+      <div class=&quot;b coral&quot;><div class=&quot;h&quot;>1 작품 등록</div><div class=&quot;d&quot;>Series · author 고정</div></div>
+      <div class=&quot;ar&quot;>→</div>
+      <div class=&quot;b coral&quot;><div class=&quot;h&quot;>2 회차 업로드</div><div class=&quot;d&quot;>Episodes · Media</div></div>
+      <div class=&quot;ar&quot;>→</div>
+      <div class=&quot;b coral&quot;><div class=&quot;h&quot;>3 가격 제안</div><div class=&quot;d&quot;>희망가 입력</div></div>
+      <div class=&quot;ar&quot;>→</div>
+      <div class=&quot;b coral&quot;><div class=&quot;h&quot;>4 검수 제출</div><div class=&quot;d&quot;>5상태 진입</div></div>
+    </div>
+    <table style=&quot;margin-top:12px;&quot;>
+      <tr><th>Step</th><th>화면</th><th>DB</th><th>비고</th></tr>
+      <tr><td class=&quot;col&quot;>1</td><td>작품 등록·메타</td><td>Series</td><td>author = 팀장 고정 (P-4)</td></tr>
+      <tr><td class=&quot;col&quot;>2</td><td>회차 업로드·게시</td><td>Episodes · Media_Files</td><td>에디터 product_id 동기화 · 본편 가격은 작가 <strong>희망가</strong> 입력</td></tr>
+      <tr><td class=&quot;col&quot;>3</td><td>게이트 가격 제안</td><td>Interactive_Elements.price_cash</td><td>상품 ID별 희망가·문구·묶음·첫구매 (제안값)</td></tr>
+      <tr><td class=&quot;col&quot;>4</td><td>검수 제출 → 운영 조정</td><td>review_status → REVIEW</td><td>6-Step 모달 (위임 시 4단계 권한 확인) · <strong>운영이 본편/게이트 가격 최종 판단·수정</strong></td></tr>
+      <tr><td class=&quot;col&quot;>5</td><td>예약 공개</td><td>publish_at</td><td>승인 후</td></tr>
+      <tr><td class=&quot;col&quot;>6</td><td>정산 연동</td><td>Transaction → Settlement</td><td>net 추출 → RS 분배</td></tr>
+    </table>
+    <div class=&quot;callout coral&quot; style=&quot;margin-top:12px;&quot;>
+      에디터가 발행한 <code style=&quot;background:white;padding:2px 6px;border-radius:3px;&quot;>product_id</code>는 가격 없이 플랫폼 DB에 적재되어 있다. 어드민에서 가격을 부여하면 비로소 독자에게 판매 가능한 상품이 된다.
+    </div>
+    <div class=&quot;callout maroon&quot; style=&quot;margin-top:12px;&quot;>
+      <strong>가격 결정 = 2단계 (제안 → 확정).</strong> 회차 본편 가격과 게이트 상품 가격 모두, 작가가 어드민에서 <strong>희망가를 입력</strong>하면 그 값은 &quot;제안&quot;으로 기록된다. 이후 <strong>검수 프로세스에서 운영이 최종 판단하여 조정·확정</strong>한다. 가격 주도권은 운영에 있되, 작가 의견은 제안값으로 보존되어 검수자가 참고한다. 운영이 가격을 수정하면 변경 이력(제안가 → 확정가)이 Audit Log에 남는다.
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── 5장 ─── -->
+<div class=&quot;chapter-divider&quot; id=&quot;ch5&quot;>
+  <span class=&quot;num&quot;>5</span>
+  <span class=&quot;title&quot;>권한 매트릭스</span>
+  <span class=&quot;sub&quot;>3개 레이어</span>
+</div>
+
+<section class=&quot;section-intro&quot;>
+  <h2>3개 권한 레이어</h2>
+  <p>L1 메이커 협업(워크스페이스에서 부여) · L2 발행 권한 위임(어드민에서 발급·사용) · L3 AUTHOR 역할(어드민 분기 기준). 한 사용자가 여러 레이어의 권한을 동시에 가질 수 있다.</p>
+</section>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge&quot;>5-1</span>
+    <span class=&quot;name&quot;>3개 권한 레이어</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <table>
+      <tr><th>레이어</th><th>권한 종류</th><th>발급처</th><th style=&quot;text-align:center;&quot;>실행 위치</th></tr>
+      <tr><td class=&quot;col&quot; style=&quot;color:var(--brand-red);&quot;><strong>L1</strong> 메이커 협업</td><td>Owner·Editor·Commenter·Viewer</td><td>팀장 (멤버 관리)</td><td>워크스페이스</td></tr>
+      <tr><td class=&quot;col&quot; style=&quot;color:var(--lavender-dark);&quot;><strong>L2</strong> 발행 권한 위임</td><td>검수 제출·예약 공개·발행 이력</td><td>어드민</td><td>어드민</td></tr>
+      <tr><td class=&quot;col&quot; style=&quot;color:var(--maroon);&quot;><strong>L3</strong> AUTHOR 역할</td><td>author / accounting / master</td><td>CP 가입·어드민 직권</td><td>어드민 (role 분기 기준)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge lavender&quot;>5-2</span>
+    <span class=&quot;name&quot;>위임 6대 원칙</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <table>
+      <tr><th style=&quot;width:25%&quot;>원칙</th><th>내용</th></tr>
+      <tr><td class=&quot;col&quot;>P-1 토큰형 권한</td><td>시한·범위 있는 토큰. 발급·회수·만료 명확. 발급·사용 모두 어드민.</td></tr>
+      <tr><td class=&quot;col&quot;>P-2 발급자 제한</td><td>팀장 본인 또는 CP 마스터.</td></tr>
+      <tr><td class=&quot;col&quot;>P-3 수령자 제한</td><td>같은 팀 active 멤버.</td></tr>
+      <tr><td class=&quot;col&quot;>P-4 Author 불변</td><td>위임 업로드여도 작품의 author는 팀장 고정.</td></tr>
+      <tr><td class=&quot;col&quot;>P-5 이력 추적</td><td>모든 위임 이벤트 Audit Log 영구 보존.</td></tr>
+      <tr><td class=&quot;col&quot;>P-6 액션 범위 명시</td><td>submit_review / schedule_publish / edit_publish_history 액션별.</td></tr>
+    </table>
+    <div class=&quot;callout maroon&quot; style=&quot;margin-top:12px;&quot;>
+      <strong>D-3 외부 비공개.</strong> 대리 업로드 사실은 독자에게 비공개. 어드민·팀 내부에서는 author/uploader 분리 표시, 플랫폼 독자 뷰에는 author만 노출.
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── 6장 ─── -->
+<div class=&quot;chapter-divider&quot; id=&quot;ch6&quot;>
+  <span class=&quot;num&quot;>6</span>
+  <span class=&quot;title&quot;>시스템 연동 흐름</span>
+  <span class=&quot;sub&quot;>Source of Truth</span>
+</div>
+
+<section class=&quot;section-intro&quot;>
+  <h2>표면 간 책임 분담</h2>
+  <p>워크스페이스는 제작 파일·팀·구독의 원본, 어드민은 운영 데이터 전부의 원본이다. 동일 데이터를 여러 표면이 보여줄 때 어디가 원본인지 명확히 한다.</p>
+</section>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge&quot;>6-1</span>
+    <span class=&quot;name&quot;>데이터 흐름 · Source of Truth</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <table>
+      <tr><th>데이터</th><th>Source of Truth</th><th>워크스페이스</th><th>어드민</th></tr>
+      <tr><td>제작 파일 (project.json·에셋)</td><td>S3 + DB</td><td>● 원본 (제작)</td><td>조회 (검수)</td></tr>
+      <tr><td>작품·회차 (Series·Episodes)</td><td>플랫폼 DB</td><td>제작 시 생성</td><td>● 운영 원본 (업로드·게시)</td></tr>
+      <tr><td>가격 (본편·게이트 price_cash)</td><td>어드민 (운영 확정)</td><td class=&quot;n&quot;>×</td><td>● 원본 · 작가 제안 → 운영 확정</td></tr>
+      <tr><td>검수 상태</td><td>어드민</td><td class=&quot;n&quot;>×</td><td>● 원본</td></tr>
+      <tr><td>위임 (DELEGATION)</td><td>어드민</td><td class=&quot;n&quot;>×</td><td>● 원본 (발급·사용)</td></tr>
+      <tr><td>매출·정산</td><td>어드민</td><td class=&quot;n&quot;>×</td><td>● 원본</td></tr>
+      <tr><td>팀·멤버·구독</td><td>워크스페이스</td><td>● 원본</td><td>조회 (role 판별)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge&quot;>6-2</span>
+    <span class=&quot;name&quot;>에디터 → 어드민 핸드오프 시퀀스</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <ol class=&quot;list&quot;>
+      <li>워크스페이스: 작가가 에디터 진입 → 제작 → product_id 발행</li>
+      <li>에디터: 저장 시 플랫폼 DB에 Series·Episodes·Interactive_Elements 적재 (가격 NULL)</li>
+      <li>어드민: 작가가 로그인 → role 판별 → 작품·회차 관리 진입</li>
+      <li>어드민: 메타·게시 설정 + 가격 희망가 입력 (제안값으로 기록)</li>
+      <li>어드민: 검수 제출 → 운영이 가격 최종 조정·확정 → review_status REVIEW → 검수 큐</li>
+      <li>어드민: 승인 → 예약 공개 → 플랫폼 노출 → 정산 파이프 연동</li>
+    </ol>
+    <div class=&quot;callout green&quot; style=&quot;margin-top:12px;&quot;>
+      작가는 &quot;에디터에서 만들고 → 어드민에서 운영&quot;의 2-표면 흐름만 거친다. 같은 데이터를 두 곳에서 입력하는 이중 작업이 없다.
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── 7장 ─── -->
+<div class=&quot;chapter-divider&quot; id=&quot;ch7&quot;>
+  <span class=&quot;num&quot;>7</span>
+  <span class=&quot;title&quot;>다음 단계</span>
+  <span class=&quot;sub&quot;>정책 결정 · 후속 작업</span>
+</div>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge&quot;>7-1</span>
+    <span class=&quot;name&quot;>정책 결정 항목</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <table>
+      <tr><th>#</th><th>항목</th><th>현재 안</th></tr>
+      <tr><td class=&quot;col&quot;>E-1</td><td>개인 작가에게 어드민 UI 노출 범위</td><td>role별 경량 뷰 — 개인은 작품·검수·가격만</td></tr>
+      <tr><td class=&quot;col&quot;>E-2</td><td>워크스페이스↔어드민 통합 SSO 진입</td><td>단일 계정 · 표면 전환 시 토큰 공유</td></tr>
+      <tr><td class=&quot;col&quot;>E-3</td><td>위임 발급 알림 동선</td><td>어드민 인앱 + 이메일</td></tr>
+      <tr><td class=&quot;col&quot;>E-4</td><td>가격 결정 주체</td><td><span style=&quot;color:var(--success);font-weight:700;&quot;>확정</span> — 작가 희망가 → 검수 시 운영 최종 조정</td></tr>
+      <tr><td class=&quot;col&quot;>E-5</td><td>대시보드 할 일 알림 위치</td><td>반려·위임·예약 모두 어드민</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge green&quot;>7-2</span>
+    <span class=&quot;name&quot;>후속 작업</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <table>
+      <tr><th>순위</th><th>작업</th><th>상태</th></tr>
+      <tr><td class=&quot;col&quot;>N-1</td><td>어드민 작가 작업 SB (작품 등록·회차 업로드·가격 제안·검수 제출)</td><td><span class=&quot;pill coral&quot;>다음</span></td></tr>
+      <tr><td class=&quot;col&quot;>N-2</td><td>어드민 위임 관리 SB (발급·회수·대리 발행)</td><td>예정</td></tr>
+      <tr><td class=&quot;col&quot;>N-3</td><td>코인 게이트 SB (독자 측 소비·구매·잔액 + 환율·결제·환불·미성년)</td><td>예정</td></tr>
+      <tr><td class=&quot;col&quot;>N-4</td><td>워크스페이스 화면 SB (제작 환경·팀 협업 범위)</td><td>예정</td></tr>
+      <tr><td class=&quot;col&quot;>N-5</td><td>DB·API 명세 V1.3.0 (어드민 운영 엔드포인트)</td><td>예정</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge&quot;>7-3</span>
+    <span class=&quot;name&quot;>본 문서가 풀지 않은 것 (Out of Scope)</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <ul class=&quot;list&quot;>
+      <li>어드민 각 화면의 정밀 SB (작품 등록·검수·가격 — N-1~N-2에서)</li>
+      <li>코인 게이트 독자 측 결제·소비 UI (별도 SB)</li>
+      <li>코인↔원화 환율·결제수단·환불·미성년 한도 정책</li>
+      <li>정산 RS/MG 계산 모델 상세</li>
+      <li>운영 role의 CS·통계·프로모션 화면</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ─── 부록 A ─── -->
+<div class=&quot;chapter-divider&quot; id=&quot;appx&quot;>
+  <span class=&quot;num&quot;>A</span>
+  <span class=&quot;title&quot;>부록 — 변경 이력</span>
+  <span class=&quot;sub&quot;>구현 불필요 · 의사결정 맥락</span>
+</div>
+
+<section class=&quot;section-intro&quot;>
+  <h2>이 부록의 성격</h2>
+  <p>본문(1~7장)만으로 구현에 필요한 모든 정의가 완결된다. 이 부록은 V1.3.0 구조에 이르기까지의 내부 의사결정 맥락을 기록한 것으로, <strong>구현 착수에는 필요하지 않다.</strong> &quot;왜 이 구조가 되었나&quot;가 궁금한 경우에만 참고한다.</p>
+</section>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge dark&quot;>A-1</span>
+    <span class=&quot;name&quot;>버전 히스토리</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <table>
+      <tr><th>버전</th><th>일시</th><th>상태</th><th>요지</th></tr>
+      <tr><td class=&quot;col&quot;>V1.2.0</td><td>2026.04.06</td><td>내부안</td><td>워크스페이스 경량화 — 검수·매출·정산·CP관리를 어드민으로 분리</td></tr>
+      <tr><td class=&quot;col&quot;>V1.2.1</td><td>2026.05.29</td><td>내부안 (미배포)</td><td>작가 페르소나 우선 — 검수·발행·위임을 워크스페이스로 재통합</td></tr>
+      <tr><td class=&quot;col&quot; style=&quot;color:var(--brand-red);&quot;>V1.3.0</td><td>2026.06.10</td><td>현행 (배포)</td><td>업로드·검수·가격·위임을 모두 어드민으로 일원화 · 문서를 워크스페이스 IA → <strong>작가 도구 통합 IA</strong>로 승격</td></tr>
+    </table>
+    <div class=&quot;callout&quot; style=&quot;margin-top:12px;&quot;>
+      <strong>V1.2.1은 배포되지 않았다.</strong> 내부 검토·회의를 거쳐 V1.3.0으로 갱신되었으므로, 개발TF에는 V1.3.0이 첫 배포 문서다. 본문은 V1.3.0 기준으로 완결되어 있어 이전 버전을 알 필요가 없다.
+    </div>
+    <div class=&quot;callout lavender&quot; style=&quot;margin-top:12px;&quot;>
+      <strong>문서 범위 변경.</strong> V1.2.x까지 이 문서는 &quot;워크스페이스 IA&quot;였으나, V1.3.0에서 운영이 어드민으로 일원화되면서 워크스페이스·어드민·에디터 세 표면을 함께 정의하는 <strong>통합 IA</strong>로 승격했다. 파일명도 <code>playtoon_platform_ia_v1.3.0</code>으로 변경(이전: <code>playtoon_workspace_v1.2.1_ia</code>).
+    </div>
+  </div>
+</div>
+
+<div class=&quot;card&quot;>
+  <div class=&quot;card-header&quot;>
+    <span class=&quot;badge dark&quot;>A-2</span>
+    <span class=&quot;name&quot;>V1.3.0 일원화 결정의 배경</span>
+  </div>
+  <div class=&quot;card-body&quot;>
+    <p>V1.2.1은 작가가 본인 작품을 직접 검수 제출하는 흐름을 워크스페이스에 두었다. 그러나 작가가 에디터에서 작품을 만드는 순간 플랫폼 DB(Series·Episodes·Interactive_Elements)에 모든 정보가 적재된다는 점에 주목하면, 워크스페이스에서 업로드 폼을 한 번, 어드민에서 가격·정산을 한 번 처리하는 것은 같은 데이터를 두 곳에서 만지는 이중 작업이다.</p>
+    <p>V1.3.0은 이 이중성을 제거한다. 작품 운영은 그 데이터를 다루는 어드민 한 곳에서 끝내고, 워크스페이스는 제작 환경·팀 협업이라는 본래 역할로 정리한다. 어드민은 계정 role로 운영·개인·CP를 이미 구분하므로 &quot;파트너 어드민&quot;을 별도 앱으로 둘 필요도 없다.</p>
+  </div>
+</div>
+
+<section class=&quot;section-intro&quot; style=&quot;margin-top:32px;background:linear-gradient(135deg,var(--brand-red-soft),var(--coral-soft));&quot;>
+  <h2>요약</h2>
+  <p>세 도구의 역할이 명확히 갈린다 — <strong>에디터는 제작, 워크스페이스는 제작 환경·팀, 어드민은 운영</strong>. 작가의 작품 운영(업로드·검수·가격·정산·위임)은 어드민 한 곳에서 완결되며, 개인·CP·운영이 같은 어드민에서 계정 role로만 구분된다.</p>
+  <div class=&quot;pills&quot; style=&quot;margin-top:16px;&quot;>
+    <span class=&quot;pill lavender&quot;>에디터 — 제작</span>
+    <span class=&quot;pill green&quot;>워크스페이스 — 제작 환경·팀</span>
+    <span class=&quot;pill red&quot;>어드민 — 운영 일원화</span>
+  </div>
+</section>
+
+<p style=&quot;text-align:center;color:var(--text-muted);margin-top:32px;font-size:11px;&quot;>— 끝 —</p>
+
+</main>
+
+
+</div>
+
+<footer class=&quot;doc-footer&quot;>
+  <strong>PlayToon</strong>작가 도구 통합 IA · V1.3.0 · 2026.06.10
+  <div class=&quot;meta-line&quot;>7장 + 부록 · 워크스페이스·어드민·에디터 통합 · 어드민 일원화 · 3개 권한 레이어 · 단독 완결</div>
+</footer>
+
+<script>
+const links = document.querySelectorAll('.sidebar a');
+const sections = document.querySelectorAll('[id]');
+function activate() {
+  let current = '';
+  sections.forEach(s => {
+    if (s.getBoundingClientRect().top < 200) current = s.id;
+  });
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+}
+window.addEventListener('scroll', activate);
+links.forEach(l => l.addEventListener('click', e => {
+  const t = document.querySelector(l.getAttribute('href'));
+  if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+}));
+</script>
+
+</body>
+</html>
+" ></iframe>
+<iframe class="frame" id="fr_n4" title="N-4 워크스페이스 화면 SB" srcdoc="<!DOCTYPE html>
+<html lang=&quot;ko&quot;>
+<head>
+<meta charset=&quot;UTF-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+<title>워크스페이스 화면 SB · N-4 · V1.0.0</title>
+<link href=&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css&quot; rel=&quot;stylesheet&quot;>
+<style>
+:root{
+  --red:#DC3545; --red-d:#B02A37; --red-soft:#FBE9EB;
+  --maroon:#6B1F1F; --maroon-d:#4E1616;
+  --lav:#A99DE4; --lav-soft:#EEEBFA; --lav-d:#8273C9;
+  --teal:#1D9E75; --teal-soft:#E1F5EE; --teal-d:#0F6E56;
+  --coral:#FB923C; --coral-soft:#FFEDD5; --coral-d:#9A3412;
+  --gold:#FACC15; --gold-d:#A77B00; --gold-soft:#FEF7D6;
+  --ink:#1A1417; --ink-2:#544A4D; --ink-3:#8A8084;
+  --line:#E7E2E4; --line-2:#F1EEEF;
+  --bg:#FAF8F9; --surf:#FFFFFF; --surf-2:#F6F3F5;
+  --ok:#1A7F52; --ok-soft:#E3F3EB; --warn:#C77700; --warn-soft:#FBEFD8;
+  --r-s:6px; --r:10px; --r-l:16px;
+  --sh-s:0 1px 2px rgba(26,20,23,.06);
+  --sh:0 4px 16px rgba(26,20,23,.08);
+  --font:&quot;Pretendard Variable&quot;,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --mono:&quot;SFMono-Regular&quot;,Consolas,&quot;Liberation Mono&quot;,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-feature-settings:&quot;ss01&quot;,&quot;tnum&quot;}
+::selection{background:var(--teal);color:#fff}
+
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line);height:60px;display:flex;align-items:center;gap:16px;padding:0 22px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em}
+.brand .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--teal),var(--maroon));display:grid;place-items:center;color:#fff;font-size:15px;font-weight:800;box-shadow:var(--sh-s)}
+.brand .nm{font-size:15.5px}
+.brand .nm small{display:block;font-size:10.5px;font-weight:600;color:var(--ink-3);letter-spacing:.02em;line-height:1}
+.topbar .ver{margin-left:6px;font-size:11px;font-weight:700;color:var(--teal-d);background:var(--teal-soft);padding:3px 9px;border-radius:999px}
+.topbar .sp{flex:1}
+.topbar .crumb{font-size:12.5px;color:var(--ink-3);font-weight:600}
+.topbar .crumb b{color:var(--ink)}
+
+.wrap{display:grid;grid-template-columns:248px 1fr;min-height:calc(100vh - 60px)}
+.side{border-right:1px solid var(--line);background:var(--surf);padding:20px 14px;position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto}
+.side h6{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase;margin:18px 10px 8px}
+.side h6:first-child{margin-top:0}
+.side a{display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:var(--r-s);font-size:13px;font-weight:600;color:var(--ink-2);text-decoration:none;transition:.14s;cursor:pointer}
+.side a .n{width:18px;height:18px;border-radius:5px;background:var(--surf-2);color:var(--ink-3);font-size:10px;font-weight:800;display:grid;place-items:center;flex:none}
+.side a:hover{background:var(--teal-soft);color:var(--maroon)}
+.side a.on{background:var(--maroon);color:#fff}
+.side a.on .n{background:rgba(255,255,255,.22);color:#fff}
+.main{padding:34px 40px 90px;max-width:1100px}
+
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-d);background:var(--teal-soft);padding:5px 11px;border-radius:999px;margin-bottom:14px}
+h1.t{font-size:30px;font-weight:800;letter-spacing:-.025em;line-height:1.2;margin-bottom:10px}
+h1.t .accent{color:var(--teal-d)}
+.lead{font-size:15px;color:var(--ink-2);max-width:64ch;margin-bottom:8px}
+h2.s{font-size:20px;font-weight:800;letter-spacing:-.02em;margin:42px 0 14px;padding-top:18px;display:flex;align-items:center;gap:10px}
+h2.s .bar{width:4px;height:20px;border-radius:2px;background:var(--teal)}
+h3.ss{font-size:15.5px;font-weight:800;margin:26px 0 10px;color:var(--maroon)}
+p.tx{font-size:14px;color:var(--ink-2);margin:8px 0;max-width:72ch}
+.section{scroll-margin-top:80px;margin-bottom:8px}
+.divider{height:1px;background:var(--line);margin:40px 0}
+
+.card{background:var(--surf);border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--sh-s)}
+.pad{padding:22px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--surf-2);color:var(--ink-2);border:1px solid var(--line)}
+.tag.red{background:var(--red-soft);color:var(--red-d);border-color:transparent}
+.tag.lav{background:var(--lav-soft);color:var(--lav-d);border-color:transparent}
+.tag.teal{background:var(--teal-soft);color:var(--teal-d);border-color:transparent}
+.tag.coral{background:var(--coral-soft);color:var(--coral-d);border-color:transparent}
+.tag.gold{background:var(--gold-soft);color:var(--gold-d);border-color:transparent}
+.tag.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.tag.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.tag.mar{background:#F3E7E7;color:var(--maroon);border-color:transparent}
+
+.note{border-left:3px solid var(--teal);background:var(--teal-soft);padding:13px 16px;border-radius:0 var(--r) var(--r) 0;font-size:13px;color:var(--teal-d);margin:14px 0}
+.note b{color:var(--teal-d)}
+.note.warn{border-color:var(--gold);background:var(--gold-soft);color:#6b5200}
+.note.warn b{color:#6b5200}
+.note.red{border-color:var(--red);background:var(--red-soft);color:var(--maroon-d)}
+.note.red b{color:var(--maroon)}
+.note.lav{border-color:var(--lav);background:var(--lav-soft);color:var(--maroon-d)}
+.note.lav b{color:var(--maroon)}
+
+table.tb{width:100%;border-collapse:collapse;font-size:13px;background:var(--surf);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:12px 0}
+table.tb th{background:var(--surf-2);text-align:left;padding:11px 13px;font-size:11.5px;font-weight:800;color:var(--ink-2);letter-spacing:.02em;border-bottom:1px solid var(--line)}
+table.tb td{padding:10px 13px;border-bottom:1px solid var(--line-2);color:var(--ink-2);vertical-align:top}
+table.tb tr:last-child td{border-bottom:none}
+table.tb code{font-family:var(--mono);font-size:12px;background:var(--surf-2);padding:1px 6px;border-radius:5px;color:var(--maroon)}
+table.tb .y{color:var(--ok);font-weight:800}
+table.tb .nn{color:var(--ink-3)}
+
+.wf{border:1.5px solid var(--ink);border-radius:var(--r);background:var(--surf);overflow:hidden;margin:14px 0;box-shadow:var(--sh)}
+.wf-bar{background:var(--ink);color:#fff;padding:8px 14px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px}
+.wf-bar .dots{display:flex;gap:5px}
+.wf-bar .dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4)}
+.wf-bar .url{margin-left:auto;font-family:var(--mono);font-size:10.5px;background:rgba(255,255,255,.14);padding:3px 9px;border-radius:6px;font-weight:500}
+.wf-body{padding:18px}
+.fld{border:1px dashed var(--line);border-radius:var(--r-s);padding:11px 13px;margin:9px 0;background:var(--surf-2)}
+.fld .fl{font-size:11px;font-weight:800;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;display:flex;justify-content:space-between}
+.fld .fl .req{color:var(--red)}
+.fld .fv{font-size:13.5px;color:var(--ink);margin-top:5px;font-weight:500}
+.fld.ghost .fv{color:var(--ink-3);font-weight:400;font-style:italic}
+.row{display:flex;gap:9px}.row>*{flex:1}
+.btnp{display:inline-flex;align-items:center;gap:7px;background:var(--teal);color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:var(--r-s);border:none}
+.btnp.ghost{background:var(--surf);color:var(--ink-2);border:1px solid var(--line)}
+.btnp.mar{background:var(--maroon)}
+.dz{border:2px dashed var(--teal);border-radius:var(--r);background:var(--teal-soft);padding:24px;text-align:center;color:var(--teal-d);font-weight:700;font-size:13px;margin:10px 0}
+.dz small{display:block;font-weight:500;color:var(--ink-3);margin-top:5px;font-size:11.5px}
+
+/* dashboard grid mock */
+.dash{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+.dash .pj{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surf)}
+.dash .pj .th{aspect-ratio:3/2;background:linear-gradient(135deg,var(--lav-soft),var(--teal-soft));display:grid;place-items:center;color:var(--ink-3);font-size:11px;font-weight:700}
+.dash .pj .nm{padding:8px 10px;font-size:12px;font-weight:700}
+.dash .pj .nm small{display:block;font-weight:500;color:var(--ink-3);font-size:10.5px}
+.dash .pj.add{border-style:dashed;display:grid;place-items:center;color:var(--teal-d);font-weight:800;font-size:13px;min-height:110px}
+
+ul.spec{list-style:none;margin:10px 0}
+ul.spec li{position:relative;padding:7px 0 7px 24px;font-size:13.5px;color:var(--ink-2);border-bottom:1px solid var(--line-2)}
+ul.spec li:last-child{border-bottom:none}
+ul.spec li::before{content:&quot;&quot;;position:absolute;left:4px;top:14px;width:7px;height:7px;border-radius:2px;background:var(--teal);transform:rotate(45deg)}
+ul.spec li b{color:var(--ink)}
+
+.flow{display:flex;align-items:stretch;gap:0;margin:16px 0;flex-wrap:wrap}
+.flow .box{flex:1;min-width:130px;background:var(--surf);border:1.5px solid var(--line);border-radius:var(--r);padding:14px;text-align:center}
+.flow .box.teal{border-color:var(--teal);background:var(--teal-soft)}
+.flow .box.lav{border-color:var(--lav);background:var(--lav-soft)}
+.flow .box.mar{border-color:var(--maroon);background:#F3E7E7}
+.flow .box .h{font-size:13px;font-weight:800;color:var(--ink)}
+.flow .box .d{font-size:11px;color:var(--ink-2);margin-top:4px}
+.flow .arr{align-self:center;color:var(--ink-3);font-size:20px;padding:0 6px;font-weight:300}
+@media(max-width:780px){.flow .arr{transform:rotate(90deg)}}
+
+.assettabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.assettabs .at{font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:999px;background:var(--surf-2);color:var(--ink-2);border:1px solid var(--line)}
+.assettabs .at.on{background:var(--teal);color:#fff;border-color:transparent}
+
+footer.ft{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3)}
+footer.ft b{color:var(--ink-2)}
+</style>
+</head>
+<body>
+<div class=&quot;topbar&quot;>
+  <div class=&quot;brand&quot;>
+    <div class=&quot;logo&quot;>W</div>
+    <div class=&quot;nm&quot;>Playtoon Workspace<small>워크스페이스 화면 (N-4)</small></div>
+  </div>
+  <span class=&quot;ver&quot;>SB V1.0.0</span>
+  <div class=&quot;sp&quot;></div>
+  <div class=&quot;crumb&quot;>통합 IA V1.3.0 2장 정합 · <b>app.playtoon.studio/workspace</b></div>
+</div>
+<div class=&quot;wrap&quot;>
+  <nav class=&quot;side&quot; id=&quot;nav&quot;></nav>
+  <main class=&quot;main&quot; id=&quot;main&quot;></main>
+</div>
+<script>
+window.SB_NAV = [
+  { group:&quot;개요&quot;, items:[
+    { id:&quot;overview&quot;, n:&quot;0&quot;, label:&quot;문서 개요 · 정합 기준&quot; },
+    { id:&quot;scope&quot;,    n:&quot;S&quot;, label:&quot;범위 경계 (어드민과 분리)&quot; },
+    { id:&quot;map&quot;,      n:&quot;M&quot;, label:&quot;영역 사이트맵&quot; },
+  ]},
+  { group:&quot;워크스페이스 화면&quot;, items:[
+    { id:&quot;switcher&quot;,n:&quot;1&quot;, label:&quot;워크스페이스 스위처&quot; },
+    { id:&quot;login&quot;,   n:&quot;2&quot;, label:&quot;로그인·인증 (SSO 공유)&quot; },
+    { id:&quot;dash&quot;,    n:&quot;3&quot;, label:&quot;대시보드&quot; },
+    { id:&quot;project&quot;, n:&quot;4&quot;, label:&quot;프로젝트 관리&quot; },
+    { id:&quot;asset&quot;,   n:&quot;5&quot;, label:&quot;에셋 라이브러리&quot; },
+    { id:&quot;team&quot;,    n:&quot;6&quot;, label:&quot;팀·멤버 관리 (L1)&quot; },
+    { id:&quot;billing&quot;, n:&quot;7&quot;, label:&quot;요금제·결제 (스토리지)&quot; },
+    { id:&quot;setting&quot;, n:&quot;8&quot;, label:&quot;워크스페이스 설정&quot; },
+  ]},
+  { group:&quot;핸드오프&quot;, items:[
+    { id:&quot;editor&quot;, n:&quot;9&quot;, label:&quot;에디터 워크스페이스&quot; },
+  ]},
+  { group:&quot;레퍼런스&quot;, items:[
+    { id:&quot;perm&quot;, n:&quot;P&quot;, label:&quot;L1 협업 권한 (4-role)&quot; },
+    { id:&quot;open&quot;, n:&quot;Q&quot;, label:&quot;미결 · 다음 단계&quot; },
+  ]},
+  { group:&quot;부록&quot;, items:[
+    { id:&quot;appx&quot;, n:&quot;A&quot;, label:&quot;실제 웹 차이 · 디자이너 지시&quot; },
+  ]},
+];
+
+window.SB_BODY = `
+
+<section class=&quot;section&quot; id=&quot;overview&quot;>
+  <span class=&quot;eyebrow&quot;>Storyboard · 워크스페이스 N-4 · IA V1.3.0 2장</span>
+  <h1 class=&quot;t&quot;>워크스페이스 <span class=&quot;accent&quot;>화면</span> 명세</h1>
+  <p class=&quot;lead&quot;>워크스페이스(app.playtoon.studio/workspace)는 &quot;만들기 위한 도구&quot;다. 작가/팀이 제작 환경을 세팅하고, 팀으로 협업하고, 에디터로 진입하는 화면들. 작품 운영(업로드·검수·가격·위임)은 어드민 소관이라 여기 없다.</p>
+
+  <div class=&quot;grid g3&quot; style=&quot;margin-top:20px&quot;>
+    <div class=&quot;card pad&quot;>
+      <div class=&quot;tag teal&quot;>정합 기준 · IA V1.3.0</div>
+      <ul class=&quot;spec&quot; style=&quot;margin-top:8px&quot;>
+        <li><b>제작 환경 허브</b> (만들기 도구)</li>
+        <li>7개 영역 + 에디터 진입</li>
+        <li>운영(검수·가격·위임) <b>제외</b> → 어드민</li>
+        <li>L1 메이커 협업 권한 부여처</li>
+        <li>어드민과 <b>SSO 공유</b></li>
+      </ul>
+    </div>
+    <div class=&quot;card pad&quot;>
+      <div class=&quot;tag lav&quot;>DB·연동</div>
+      <ul class=&quot;spec&quot; style=&quot;margin-top:8px&quot;>
+        <li><code>TEAM</code> · <code>TEAM_MEMBERSHIP</code></li>
+        <li><code>project.json</code> (제작 마스터)</li>
+        <li>Asset Library (팀 공용/개인)</li>
+        <li>구독 (Free/Pro/Team)</li>
+        <li>Access Token → 에디터</li>
+      </ul>
+    </div>
+    <div class=&quot;card pad&quot;>
+      <div class=&quot;tag red&quot;>디자인 시스템</div>
+      <ul class=&quot;spec&quot; style=&quot;margin-top:8px&quot;>
+        <li>제작 환경 = Teal <b>#1D9E75</b></li>
+        <li>Maroon <b>#6B1F1F</b> · Lavender</li>
+        <li>어드민(coral)과 톤 구분</li>
+        <li>Pretendard Variable</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class=&quot;note red&quot;><b>운영 화면 금지.</b> V1.2.x 워크스페이스 기획에 있던 검수 제출·발행·위임·가격 화면은 V1.3.0에서 어드민으로 이관됐다. 본 SB는 그 화면들을 <b>포함하지 않는다</b>. 워크스페이스는 제작·협업만.</div>
+
+  <div class=&quot;note warn&quot;><b>이 문서가 기준(정본)이다.</b> 본 SB는 처음 배포된 기획서(통합 IA V1.3.0 2장)의 설계 의도를 화면으로 정의한다. 현재 구현된 워크스페이스 웹은 이 기획서를 전달받아 만들어졌으나 일부 항목이 기획에서 벗어나 있다(준비 중 메뉴·미도입 디자인 요소 등). <b>실제 웹을 기준으로 본 SB를 맞추는 것이 아니라, 본 SB(기획)에 실제 웹이 수렴해야 한다.</b> 기획 대비 실제 웹의 차이와 디자이너 액션은 부록 A에 정리했다.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;scope&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>범위 경계 · 어드민과 분리</h2>
+  <p class=&quot;tx&quot;>워크스페이스에 있는 것과 어드민으로 빠진 것을 명확히. 개발자가 화면을 잘못 배치하지 않도록 경계를 못박는다.</p>
+  <div class=&quot;grid g2&quot;>
+    <div class=&quot;card pad&quot;>
+      <div class=&quot;tag teal&quot; style=&quot;margin-bottom:8px&quot;>워크스페이스에 있음 (본 SB)</div>
+      <ul class=&quot;spec&quot;>
+        <li>로그인·인증, 대시보드</li>
+        <li>프로젝트 관리 (제작 파일·버전)</li>
+        <li>에셋 라이브러리</li>
+        <li>팀·멤버 관리 (L1 협업 권한)</li>
+        <li>요금제·결제 (SaaS 구독)</li>
+        <li>워크스페이스 설정 · 에디터 진입</li>
+      </ul>
+    </div>
+    <div class=&quot;card pad&quot;>
+      <div class=&quot;tag coral&quot; style=&quot;margin-bottom:8px&quot;>어드민으로 빠짐 (N-1·N-2)</div>
+      <ul class=&quot;spec&quot;>
+        <li>작품 등록·회차 업로드·게시</li>
+        <li>게이트/본편 가격 (제안·확정)</li>
+        <li>검수 제출·상태·반려·예약 공개</li>
+        <li>발행 이력·대리 발행</li>
+        <li>위임 발급·회수</li>
+        <li>정산·매출·계약</li>
+      </ul>
+    </div>
+  </div>
+  <div class=&quot;note&quot;><b>구분 기준.</b> &quot;작품을 만드는 데 필요한가&quot;(워크스페이스) vs &quot;만든 작품을 운영하는가&quot;(어드민). 프로젝트는 양쪽에 나오지만, 워크스페이스의 프로젝트는 <b>제작 파일</b>(빈 캔버스·버전)이고 어드민의 작품은 <b>운영 대상</b>(Series·발행)이다.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;map&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>영역 사이트맵</h2>
+  <p class=&quot;tx&quot;>IA 2장의 7개 영역 + 에디터 진입에, 컨텍스트 전환기인 워크스페이스 스위처를 더한 구성. 본문 섹션 번호와 일치한다.</p>
+  <table class=&quot;tb&quot;>
+    <tr><th>#</th><th>영역</th><th>핵심 화면</th><th>비고</th></tr>
+    <tr><td>①</td><td>워크스페이스 스위처</td><td>개인/팀 전환·추가</td><td>컨텍스트 전환기</td></tr>
+    <tr><td>②</td><td>로그인·인증</td><td>이메일·소셜 로그인, SSO</td><td>어드민과 계정 공유</td></tr>
+    <tr><td>③</td><td>대시보드</td><td>이어서 작업·바로가기·최근 팀 활동</td><td>진입 허브</td></tr>
+    <tr><td>④</td><td>프로젝트 관리</td><td>목록·신규·상세·버전</td><td>제작 파일 중심</td></tr>
+    <tr><td>⑤</td><td>에셋 라이브러리</td><td>팀 공용/개인 · 6개 카테고리</td><td><span class=&quot;tag&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d)&quot;>추후 기획</span></td></tr>
+    <tr><td>⑥</td><td>팀·멤버 관리 (팀 콜라보)</td><td>팀 목록·선택·초대·권한(4-role)</td><td>L1 협업 권한</td></tr>
+    <tr><td>⑦</td><td>요금제·결제</td><td>하단 진입점 → 요금제(스토리지 쿼터 포함)</td><td>SaaS 구독(작품 결제와 무관)</td></tr>
+    <tr><td>⑧</td><td>설정</td><td>워크스페이스·계정·환경</td><td>제작 환경</td></tr>
+    <tr><td>⑨</td><td>에디터 워크스페이스</td><td>Token + project.json Handshake</td><td>외부 전환</td></tr>
+  </table>
+  <div class=&quot;note warn&quot;><b>일부는 추후 기획 / 제거 대상.</b> 템플릿·에셋 라이브러리·팀 에셋 라이브러리는 현재 메뉴만 있는 상태(추후 기획), AI 채색·AI 자동 생성은 도입 계획 없는 디자인 요소(제거 대상)다. 상세는 부록 A.</div>
+</section>
+
+<div class=&quot;divider&quot;></div>
+
+<section class=&quot;section&quot; id=&quot;switcher&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>① 워크스페이스 스위처</h2>
+  <p class=&quot;tx&quot;>사이드바 최상단의 컨텍스트 전환기. 한 사용자가 <b>개인 작업</b>과 <b>여러 팀 작업</b>을 오갈 수 있으므로, 현재 어느 워크스페이스(개인/팀)에 있는지 선택·전환한다. 선택된 워크스페이스에 따라 아래 프로젝트·에셋·멤버 범위가 달라진다.</p>
+  <div class=&quot;wf&quot;>
+    <div class=&quot;wf-bar&quot;><div class=&quot;dots&quot;><i></i><i></i><i></i></div> 워크스페이스 스위처 <span class=&quot;url&quot;>사이드바 상단</span></div>
+    <div class=&quot;wf-body&quot;>
+      <div class=&quot;fld&quot;><div class=&quot;fl&quot;>현재 워크스페이스 ▾</div><div class=&quot;fv&quot;>이국마 · 전병모's Team　<span class=&quot;tag teal&quot;>팀</span></div></div>
+      <div class=&quot;fld ghost&quot;><div class=&quot;fl&quot;>전환 목록</div><div class=&quot;fv&quot;>· 전병모's Team (팀·4명)　· momo (개인·1명)　· ＋ 워크스페이스 추가</div></div>
+    </div>
+  </div>
+  <table class=&quot;tb&quot;>
+    <tr><th>요소</th><th>내용</th><th>비고</th></tr>
+    <tr><td>현재 워크스페이스</td><td>선택된 개인/팀 컨텍스트</td><td>드롭다운</td></tr>
+    <tr><td>전환</td><td>다른 개인/팀 워크스페이스로 이동</td><td>범위 전체 전환</td></tr>
+    <tr><td>워크스페이스 추가 (＋)</td><td>새 개인/팀 워크스페이스 생성</td><td><code>TEAM</code> 생성</td></tr>
+  </table>
+  <div class=&quot;note&quot;><b>왜 필요한가.</b> 같은 계정이 어떤 작품에선 팀장, 다른 작품에선 팀원, 또 개인으로 별도 프로젝트를 진행할 수 있다. 스위처는 이 컨텍스트를 명확히 분리해, 선택된 워크스페이스의 프로젝트·에셋·멤버만 보이도록 한다.</div>
+  <div class=&quot;note warn&quot;><b>기획 맥락.</b> 워크스페이스 스위처는 초기 기획 당시 팀 개념이 배제되어 빠져 있었으나, 개발 진행 중 팀 협업이 필수가 되며 정식 채택됐다. 현재 기준 <b>정식 포함</b> 요소다(부록 A 참조).</div>
+</section>
+
+<div class=&quot;divider&quot;></div>
+
+<section class=&quot;section&quot; id=&quot;login&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>② 로그인·인증 (SSO 공유)</h2>
+  <p class=&quot;tx&quot;>랜딩 페이지에서 &quot;메이커 사용해보기&quot;(또는 &quot;무료로 시작하기&quot;)를 누르면 로그인 모달이 뜬다. 워크스페이스와 어드민·메이커는 같은 계정 체계를 쓰며, 로그인 시 토큰을 공유해 표면 전환 시 재로그인 없이 이동한다(IA E-2).</p>
+
+  <h3 class=&quot;ss&quot;>진입 동선</h3>
+  <div class=&quot;flow&quot;>
+    <div class=&quot;box teal&quot;><div class=&quot;h&quot;>랜딩 페이지</div><div class=&quot;d&quot;>playtoon.studio<br>&quot;메이커 사용해보기&quot;</div></div>
+    <div class=&quot;arr&quot;>→</div>
+    <div class=&quot;box lav&quot;><div class=&quot;h&quot;>로그인 모달</div><div class=&quot;d&quot;>우측 슬라이드<br>(좌측 작품 프리뷰)</div></div>
+    <div class=&quot;arr&quot;>→</div>
+    <div class=&quot;box mar&quot;><div class=&quot;h&quot;>워크스페이스</div><div class=&quot;d&quot;>app.playtoon.studio<br>/workspace</div></div>
+  </div>
+
+  <h3 class=&quot;ss&quot;>로그인 모달</h3>
+  <div class=&quot;wf&quot;>
+    <div class=&quot;wf-bar&quot;><div class=&quot;dots&quot;><i></i><i></i><i></i></div> 로그인 (우측 슬라이드 모달) <span class=&quot;url&quot;>playtoon.studio → 로그인</span></div>
+    <div class=&quot;wf-body&quot;>
+      <div style=&quot;font-size:13px;font-weight:800;text-align:center;margin-bottom:2px&quot;>Playtoon에 오신 것을 환영합니다</div>
+      <div style=&quot;font-size:11.5px;color:var(--ink-3);text-align:center;margin-bottom:12px&quot;>가입하여 모든 기능 체험</div>
+      <div class=&quot;fld ghost&quot;><div class=&quot;fv&quot; style=&quot;text-align:center&quot;>🟦 Google로 계속하기 ›</div></div>
+      <div class=&quot;fld ghost&quot;><div class=&quot;fv&quot; style=&quot;text-align:center&quot;>⬛ Apple로 계속하기 ›</div></div>
+      <div class=&quot;fld ghost&quot;><div class=&quot;fv&quot; style=&quot;text-align:center&quot;>🟨 Kakao로 계속하기 ›</div></div>
+      <div class=&quot;fld ghost&quot;><div class=&quot;fv&quot; style=&quot;text-align:center&quot;>🟩 Naver로 계속하기 ›</div></div>
+      <div style=&quot;text-align:center;margin:10px 0;font-size:11.5px;color:var(--ink-3)&quot;>— 또는 —</div>
+      <div class=&quot;fld&quot;><div class=&quot;fl&quot;>이메일 주소 <span class=&quot;req&quot;>*</span></div><div class=&quot;fv&quot;>creator@example.com</div></div>
+      <div class=&quot;fld&quot;><div class=&quot;fl&quot;>비밀번호 <span class=&quot;req&quot;>*</span></div><div class=&quot;fv&quot;>•••••••• · 비밀번호 찾기</div></div>
+      <div style=&quot;text-align:right;margin-top:8px&quot;><span class=&quot;btnp mar&quot;>로그인</span></div>
+      <div style=&quot;text-align:center;margin-top:8px;font-size:11.5px;color:var(--ink-3)&quot;>계정이 없으신가요? <b style=&quot;color:var(--maroon)&quot;>회원가입</b></div>
+    </div>
+  </div>
+  <table class=&quot;tb&quot;>
+    <tr><th>요소</th><th>내용</th><th>비고</th></tr>
+    <tr><td>소셜 로그인 (우선)</td><td>Google · Apple · Kakao · Naver</td><td>&quot;○○로 계속하기&quot;</td></tr>
+    <tr><td>이메일 로그인</td><td>이메일 + 비밀번호</td><td>&quot;또는&quot; 아래</td></tr>
+    <tr><td>비밀번호 찾기 · 회원가입</td><td>보조 링크</td><td>—</td></tr>
+    <tr><td>모달 형태</td><td>우측 슬라이드, 좌측 작품 프리뷰</td><td>별도 페이지 아님</td></tr>
+  </table>
+  <div class=&quot;note&quot;><b>SSO 핸드셰이크.</b> 로그인 시 발급된 세션이 어드민·메이커와 공유된다. 워크스페이스↔어드민↔메이커 전환 시 토큰을 넘겨 자동 인증 — 작가가 제작↔운영을 매끄럽게 오간다.</div>
+  <div class=&quot;note warn&quot;><b>Naver는 기획 추가.</b> 현재 구현된 로그인 모달은 Google·Apple·Kakao 3종이다. Naver는 기획 결정으로 추가하는 것이므로, 구현 시 4종으로 확장한다(부록 A 참조).</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;dash&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>③ 대시보드</h2>
+  <p class=&quot;tx&quot;>로그인 후 첫 화면. 진행 중인 프로젝트(제작 파일)를 썸네일로 보여주고, 빠르게 에디터로 진입하거나 새 프로젝트를 만든다.</p>
+  <div class=&quot;wf&quot;>
+    <div class=&quot;wf-bar&quot;><div class=&quot;dots&quot;><i></i><i></i><i></i></div> 대시보드 <span class=&quot;url&quot;>app.playtoon.studio/workspace</span></div>
+    <div class=&quot;wf-body&quot;>
+      <div style=&quot;font-size:12px;font-weight:800;color:var(--ink-3);margin-bottom:8px&quot;>진행 중인 프로젝트</div>
+      <div class=&quot;dash&quot;>
+        <div class=&quot;pj&quot;><div class=&quot;th&quot;>빗속의 선택</div><div class=&quot;nm&quot;>빗속의 선택<small>3분 전 · Auto-save</small></div></div>
+        <div class=&quot;pj&quot;><div class=&quot;th&quot;>밤의 화원</div><div class=&quot;nm&quot;>밤의 화원<small>어제</small></div></div>
+        <div class=&quot;pj add&quot;>＋ 새 프로젝트</div>
+      </div>
+    </div>
+  </div>
+  <table class=&quot;tb&quot;>
+    <tr><th>요소</th><th>내용</th><th>비고</th></tr>
+    <tr><td>프로젝트 그리드</td><td>제작 중인 프로젝트 썸네일</td><td>클릭 → 에디터 진입</td></tr>
+    <tr><td>최근 작업 내역</td><td>마지막 저장·편집 이력</td><td>Auto-save 시각</td></tr>
+    <tr><td>빠른 실행</td><td>새 프로젝트 / 이어서 편집</td><td>에디터 핸드오프</td></tr>
+  </table>
+  <div class=&quot;note warn&quot;><b>할 일 알림은 없다.</b> V1.2.x 대시보드에 있던 &quot;반려·위임 만료&quot; 할 일 위젯은 운영 영역이라 어드민으로 이관됐다(IA E-5). 워크스페이스 대시보드는 제작 진입 허브 역할만.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;project&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>④ 프로젝트 관리</h2>
+  <p class=&quot;tx&quot;>제작 파일 중심의 프로젝트 관리. 목록·신규 생성·상세·버전 관리. 여기서 &quot;신규 프로젝트&quot;는 발행과 무관한 <b>빈 캔버스 제작 시작</b>이다.</p>
+  <div class=&quot;wf&quot;>
+    <div class=&quot;wf-bar&quot;><div class=&quot;dots&quot;><i></i><i></i><i></i></div> 새 프로젝트 <span class=&quot;url&quot;>app.playtoon.studio/workspace/projects/new</span></div>
+    <div class=&quot;wf-body&quot;>
+      <div class=&quot;fld&quot;><div class=&quot;fl&quot;>프로젝트명 <span class=&quot;req&quot;>*</span></div><div class=&quot;fv&quot;>빗속의 선택</div></div>
+      <div class=&quot;row&quot;>
+        <div class=&quot;fld&quot;><div class=&quot;fl&quot;>캔버스 규격</div><div class=&quot;fv&quot;>웹툰 세로형 (720×∞) ▾</div></div>
+        <div class=&quot;fld&quot;><div class=&quot;fl&quot;>소속 팀</div><div class=&quot;fv&quot;>김작가 팀 ▾</div></div>
+      </div>
+      <div class=&quot;dz&quot;>📁 클립스튜디오/PSD 사전 임포트 (선택)<small>에디터 진입 전 클라우드 분석 · 레이어 변환</small></div>
+      <div style=&quot;text-align:right;margin-top:8px&quot;><span class=&quot;btnp ghost&quot;>취소</span> <span class=&quot;btnp&quot;>빈 캔버스로 시작</span></div>
+    </div>
+  </div>
+  <table class=&quot;tb&quot;>
+    <tr><th>화면</th><th>기능</th><th>DB</th></tr>
+    <tr><td>프로젝트 목록</td><td>썸네일·정렬·검색</td><td>project 메타</td></tr>
+    <tr><td>신규 생성</td><td>이름·캔버스·팀·사전 임포트</td><td><code>project.json</code> 생성</td></tr>
+    <tr><td>프로젝트 상세</td><td>메타·복제·삭제</td><td>—</td></tr>
+    <tr><td>버전 관리</td><td>Auto-save 스냅샷·복구</td><td>5초 단위 클라우드 백업</td></tr>
+  </table>
+  <div class=&quot;note red&quot;><b>검수·발행 없음.</b> 프로젝트 상세에 &quot;검수 제출&quot;·&quot;발행 상태&quot;·&quot;author 표시&quot; 같은 운영 요소는 없다. 그건 어드민 작품 관리(N-1)에서. 워크스페이스 프로젝트는 순수 제작 파일.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;asset&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>⑤ 에셋 라이브러리</h2>
+  <p class=&quot;tx&quot;>제작에 쓰는 소스 자산. 팀 공용과 개인으로 나뉘고 6개 카테고리로 분류된다.</p>
+  <div class=&quot;wf&quot;>
+    <div class=&quot;wf-bar&quot;><div class=&quot;dots&quot;><i></i><i></i><i></i></div> 에셋 라이브러리 <span class=&quot;url&quot;>app.playtoon.studio/workspace/assets</span></div>
+    <div class=&quot;wf-body&quot;>
+      <div class=&quot;assettabs&quot;>
+        <span class=&quot;at on&quot;>전체</span><span class=&quot;at&quot;>캐릭터 시트</span><span class=&quot;at&quot;>배경·소품</span>
+        <span class=&quot;at&quot;>폰트</span><span class=&quot;at&quot;>사운드</span><span class=&quot;at&quot;>이펙트(GLSL)</span><span class=&quot;at&quot;>연출 프리셋</span>
+      </div>
+      <div class=&quot;dz&quot;>＋ 에셋 업로드<small>WebP · PNG · MP3 · Spine · 태그 분류</small></div>
+      <div class=&quot;row&quot;>
+        <div class=&quot;fld ghost&quot;><div class=&quot;fl&quot;>공용/개인</div><div class=&quot;fv&quot;>팀 공용 ▾</div></div>
+        <div class=&quot;fld ghost&quot;><div class=&quot;fl&quot;>잠금</div><div class=&quot;fv&quot;>☐ 수정 잠금</div></div>
+      </div>
+    </div>
+  </div>
+  <table class=&quot;tb&quot;>
+    <tr><th>카테고리</th><th>예</th></tr>
+    <tr><td>캐릭터 시트</td><td>주인공·조연 스프라이트</td></tr>
+    <tr><td>배경·소품</td><td>배경 이미지·오브젝트</td></tr>
+    <tr><td>폰트·타이포</td><td>말풍선 폰트</td></tr>
+    <tr><td>사운드</td><td>BGM·SFX</td></tr>
+    <tr><td>이펙트(GLSL)·연출 프리셋</td><td>쉐이더·재사용 그룹 Blueprint</td></tr>
+  </table>
+</section>
+
+<section class=&quot;section&quot; id=&quot;team&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>⑥ 팀·멤버 관리 (L1)</h2>
+  <p class=&quot;tx&quot;>팀 협업 권한(L1 메이커 협업)을 부여하는 곳. 4-role(Owner/Editor/Commenter/Viewer)로 제작 협업 범위를 정한다. <b>위임(L2)은 여기 없다 — 어드민 소관(N-2)</b>.</p>
+  <div class=&quot;wf&quot;>
+    <div class=&quot;wf-bar&quot;><div class=&quot;dots&quot;><i></i><i></i><i></i></div> 멤버 초대 <span class=&quot;url&quot;>app.playtoon.studio/workspace/team/invite</span></div>
+    <div class=&quot;wf-body&quot;>
+      <div class=&quot;fld&quot;><div class=&quot;fl&quot;>초대 이메일 <span class=&quot;req&quot;>*</span></div><div class=&quot;fv&quot;>member@example.com</div></div>
+      <div class=&quot;fld&quot;><div class=&quot;fl&quot;>협업 역할 (L1) <span class=&quot;req&quot;>*</span></div><div class=&quot;fv&quot;>◉ Editor　○ Commenter　○ Viewer</div></div>
+      <div style=&quot;text-align:right;margin-top:8px&quot;><span class=&quot;btnp&quot;>초대 보내기</span></div>
+    </div>
+  </div>
+  <table class=&quot;tb&quot;>
+    <tr><th>화면</th><th>기능</th></tr>
+    <tr><td>멤버 목록</td><td>멤버·역할·상태 조회</td></tr>
+    <tr><td>멤버 초대</td><td>이메일·역할(4-role)</td></tr>
+    <tr><td>멤버 관리</td><td>권한 변경·내보내기</td></tr>
+  </table>
+  <div class=&quot;note lav&quot;><b>L1과 L2의 관계.</b> 여기서 부여하는 협업 권한(L1)은 &quot;에디터에서 같이 제작&quot;하는 권한이다. 그 팀원이 작품을 <b>대리 운영</b>(검수 제출 등)하려면 어드민에서 별도 <b>위임(L2)</b>을 받아야 한다(N-2). L1만으로는 운영 불가.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;billing&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>⑦ 요금제·결제 (스토리지 포함)</h2>
+  <p class=&quot;tx&quot;>워크스페이스 SaaS 구독. 사이드바에 독립 메뉴로 두지 않고, <b>사이드바 하단의 &quot;스토리지 사용량 + 업그레이드&quot;가 진입점</b>이 되어 요금제 페이지로 연결된다. 스토리지 용량은 요금제 안에 플랜별 쿼터로 포함된다.</p>
+  <div class=&quot;wf&quot;>
+    <div class=&quot;wf-bar&quot;><div class=&quot;dots&quot;><i></i><i></i><i></i></div> 사이드바 하단 진입점 <span class=&quot;url&quot;>workspace · 사이드바 하단</span></div>
+    <div class=&quot;wf-body&quot;>
+      <div class=&quot;fld&quot;><div class=&quot;fl&quot;>스토리지 사용량</div><div class=&quot;fv&quot;>21.3 MB 사용 중　<span class=&quot;btnp&quot; style=&quot;padding:4px 12px;font-size:11px&quot;>업그레이드</span></div></div>
+      <div class=&quot;fld ghost&quot;><div class=&quot;fl&quot;>클릭 시</div><div class=&quot;fv&quot;>→ 요금제 페이지 (플랜 비교 · 스토리지 쿼터 포함)</div></div>
+    </div>
+  </div>
+  <h3 class=&quot;ss&quot;>요금제 페이지 (스토리지 쿼터 포함)</h3>
+  <table class=&quot;tb&quot;>
+    <tr><th>플랜</th><th>대상</th><th>스토리지</th><th>핵심</th></tr>
+    <tr><td>Free</td><td>개인·입문</td><td><span class=&quot;tag&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d)&quot;>PH</span></td><td>기본 제작 기능</td></tr>
+    <tr><td>Pro</td><td>전문 작가</td><td><span class=&quot;tag&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d)&quot;>PH</span></td><td>고급 연출·용량 확대</td></tr>
+    <tr><td>Team</td><td>스튜디오</td><td><span class=&quot;tag&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d)&quot;>PH</span></td><td>팀 협업·좌석·우선 지원</td></tr>
+  </table>
+  <div class=&quot;note&quot;><b>스토리지 = 요금제의 일부.</b> 사이드바 하단 스토리지 표시는 현재 사용량과 업그레이드 입구 역할만 한다. 실제 용량 정책(플랜별 쿼터)은 요금제 페이지에서 관리되며, 업그레이드 시 용량이 함께 확장된다. 플랜별 용량·가격 수치는 사업 결정(placeholder).</div>
+  <div class=&quot;note warn&quot;><b>두 개의 &quot;결제&quot;를 혼동 금지.</b> 워크스페이스 요금제 = 작가가 내는 <b>제작 도구 구독료(스토리지 포함)</b>. 코인 게이트(N-3) = 독자가 내는 <b>작품 열람료</b>. 완전히 다른 결제 흐름이다.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;setting&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>⑧ 워크스페이스 설정</h2>
+  <p class=&quot;tx&quot;>제작 환경 설정. 프로필·계정 보안·기본 제작값·알림.</p>
+  <table class=&quot;tb&quot;>
+    <tr><th>항목</th><th>내용</th></tr>
+    <tr><td>워크스페이스 기본</td><td>이름·아이콘·기본 캔버스·기본 PPS·자동저장 주기</td></tr>
+    <tr><td>계정 보안</td><td>비밀번호·2FA·로그인 이력·연결 SNS</td></tr>
+    <tr><td>연동</td><td>클립스튜디오 계정·API 키(Team)</td></tr>
+    <tr><td>알림</td><td>자동저장·팀원 작업·용량 경고</td></tr>
+  </table>
+  <div class=&quot;note&quot;><b>연동 계정 표시.</b> 어드민(플랫폼) 계정과의 SSO 연동 상태를 설정에서 확인·관리한다. 연동/해제 시 양쪽에 알림.</div>
+</section>
+
+<div class=&quot;divider&quot;></div>
+
+<section class=&quot;section&quot; id=&quot;editor&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>⑨ 에디터 워크스페이스 (진입·핸드오프)</h2>
+  <p class=&quot;tx&quot;>워크스페이스의 종착점. 프로젝트를 열면 단회성 토큰으로 메이커 에디터(maker.playtoon.studio)로 전환한다. 제작은 에디터에서, 운영은 어드민에서.</p>
+  <div class=&quot;flow&quot;>
+    <div class=&quot;box teal&quot;><div class=&quot;h&quot;>① 프로젝트 선택</div><div class=&quot;d&quot;>대시보드/목록에서</div></div>
+    <div class=&quot;arr&quot;>→</div>
+    <div class=&quot;box&quot;><div class=&quot;h&quot;>② 토큰 발급</div><div class=&quot;d&quot;>단회성 Access Token</div></div>
+    <div class=&quot;arr&quot;>→</div>
+    <div class=&quot;box lav&quot;><div class=&quot;h&quot;>③ 에디터 로드</div><div class=&quot;d&quot;>project.json 호출</div></div>
+    <div class=&quot;arr&quot;>→</div>
+    <div class=&quot;box mar&quot;><div class=&quot;h&quot;>④ 6-Panel</div><div class=&quot;d&quot;>제작 환경</div></div>
+  </div>
+  <table class=&quot;tb&quot;>
+    <tr><th>단계</th><th>처리</th></tr>
+    <tr><td>토큰 발급</td><td>워크스페이스가 단회성 Access Token 발급</td></tr>
+    <tr><td>상태 로딩</td><td>에디터가 서버에서 project.json 마스터 스키마 호출</td></tr>
+    <tr><td>자동 저장</td><td>편집 사항 5초 단위 클라우드 백업</td></tr>
+    <tr><td>홈 복귀</td><td>에디터 홈 버튼 → 워크스페이스</td></tr>
+  </table>
+  <div class=&quot;note&quot;><b>제작 완료 후 동선.</b> 에디터에서 작품을 완성하면 product_id가 발행되고 플랫폼 DB에 적재된다. 이후 작가는 워크스페이스가 아니라 <b>어드민</b>에서 작품을 등록·운영한다(N-1). 워크스페이스의 역할은 제작 진입까지.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;perm&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>L1 협업 권한 (4-role)</h2>
+  <p class=&quot;tx&quot;>팀·멤버 관리에서 부여하는 메이커 협업 권한. IA 권한 매트릭스 L1.</p>
+  <table class=&quot;tb&quot;>
+    <tr><th>기능</th><th>Owner</th><th>Editor</th><th>Commenter</th><th>Viewer</th></tr>
+    <tr><td>프로젝트 열람</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td></tr>
+    <tr><td>에디터 편집</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;nn&quot;>×</td><td class=&quot;nn&quot;>×</td></tr>
+    <tr><td>에셋 업로드</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;nn&quot;>×</td><td class=&quot;nn&quot;>×</td></tr>
+    <tr><td>프로젝트 생성·삭제</td><td class=&quot;y&quot;>●</td><td class=&quot;nn&quot;>×</td><td class=&quot;nn&quot;>×</td><td class=&quot;nn&quot;>×</td></tr>
+    <tr><td>댓글</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;y&quot;>●</td><td class=&quot;nn&quot;>×</td></tr>
+    <tr><td>멤버 초대·관리</td><td class=&quot;y&quot;>●</td><td class=&quot;nn&quot;>×</td><td class=&quot;nn&quot;>×</td><td class=&quot;nn&quot;>×</td></tr>
+  </table>
+  <div class=&quot;note lav&quot;><b>운영 권한은 별도.</b> 위 표는 제작 협업(L1)만이다. 검수 제출·발행 등 운영은 어드민의 위임(L2)이 있어야 하며, Owner여도 L1만으로는 운영 화면에 접근하지 못한다. Owner = 팀장 = 작품 author(불변).</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;open&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>미결 · 다음 단계</h2>
+  <table class=&quot;tb&quot;>
+    <tr><th style=&quot;width:30%&quot;>항목</th><th>내용</th><th style=&quot;width:18%&quot;>유형</th></tr>
+    <tr><td>SSO 진입 흐름 상세</td><td>워크스페이스↔어드민 토큰 공유·전환 UX (IA E-2)</td><td><span class=&quot;tag mar&quot;>정책</span></td></tr>
+    <tr><td>구독 플랜 상세 가격</td><td>Free/Pro/Team 기능·가격 (초기 전략 ₩14,900/₩39,900 재검토)</td><td><span class=&quot;tag ph&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d);border:1px dashed var(--gold-d)&quot;>사업</span></td></tr>
+    <tr><td>에셋 용량·쿼터</td><td>플랜별 저장 용량·프로젝트 수·좌석</td><td><span class=&quot;tag mar&quot;>사업</span></td></tr>
+    <tr><td>사전 임포트 파이프</td><td>클립스튜디오·PSD 레이어 변환 상세</td><td><span class=&quot;tag lav&quot;>기술</span></td></tr>
+  </table>
+  <div class=&quot;note&quot;><b>다음 작업.</b> N-5 DB·API 명세 V1.3.0(어드민 운영 엔드포인트·DELEGATION·price_cash 제안/확정 스키마) → 플랫폼 인덱스 통합(N-3a·N-3b + IA). N-1·N-2(어드민) + N-3a·N-3b(플랫폼) + N-4(워크스페이스)로 세 표면의 화면 SB가 모두 정합됐다.</div>
+</section>
+
+<div class=&quot;divider&quot;></div>
+
+<section class=&quot;section&quot; id=&quot;appx&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>부록 A · 실제 웹 차이 · 디자이너 지시</h2>
+  <p class=&quot;tx&quot;>이 기획서(통합 IA V1.3.0 2장)는 디자이너에게 전달되어 현재 워크스페이스 웹으로 구현됐다. 구현 과정에서 일부 항목이 기획에서 벗어났다. 아래는 <b>기획 대비 현재 웹의 차이</b>와, 각 항목에 대한 <b>액션 지시</b>다. 기준은 기획서이며, 실제 웹이 여기에 수렴해야 한다.</p>
+
+  <h3 class=&quot;ss&quot;>액션 라벨</h3>
+  <div class=&quot;grid g3&quot;>
+    <div class=&quot;card pad&quot;><div class=&quot;tag ok&quot;>✓ 기획대로 유지</div><p class=&quot;tx&quot; style=&quot;margin-top:6px;font-size:12.5px&quot;>기획과 일치. 그대로 유지.</p></div>
+    <div class=&quot;card pad&quot;><div class=&quot;tag red&quot;>↩ 되돌림 / 제거</div><p class=&quot;tx&quot; style=&quot;margin-top:6px;font-size:12.5px&quot;>기획에 없거나 도입 계획 없음. 제거 또는 보류.</p></div>
+    <div class=&quot;card pad&quot;><div class=&quot;tag&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d)&quot;>◷ 추후 기획</div><p class=&quot;tx&quot; style=&quot;margin-top:6px;font-size:12.5px&quot;>메뉴만 있고 세부 미정. 별도 기획 후 구현.</p></div>
+  </div>
+
+  <table class=&quot;tb&quot;>
+    <tr><th>항목</th><th>현재 웹 상태</th><th>액션</th><th>지시</th></tr>
+    <tr><td>워크스페이스 스위처</td><td>구현됨 (개인/팀 전환)</td><td><span class=&quot;tag ok&quot;>✓ 유지</span></td><td>초기 기획엔 없었으나 팀 협업 필수로 정식 채택. 현 기준 정본에 포함 — 그대로 유지.</td></tr>
+    <tr><td>홈 · 이어서 작업하기</td><td>구현됨</td><td><span class=&quot;tag ok&quot;>✓ 유지</span></td><td>제작 진입 허브로 적합.</td></tr>
+    <tr><td>홈 · 최근 팀 활동 피드</td><td>구현됨</td><td><span class=&quot;tag ok&quot;>✓ 유지</span></td><td>제작 활동 로그(운영 무관)라 워크스페이스에 맞음.</td></tr>
+    <tr><td>전체 프로젝트 · 최근 항목</td><td>구현됨</td><td><span class=&quot;tag ok&quot;>✓ 유지</span></td><td>기획대로.</td></tr>
+    <tr><td>팀 콜라보</td><td>구현됨 (팀 목록·선택)</td><td><span class=&quot;tag ok&quot;>✓ 유지</span></td><td>L1 협업 영역. 멤버 권한·초대 흐름은 기획(⑥)과 정합 확인 필요.</td></tr>
+    <tr><td>스토리지 + 업그레이드 (하단)</td><td>구현됨</td><td><span class=&quot;tag ok&quot;>✓ 유지</span></td><td>요금제 진입점. 요금제 페이지에 스토리지 쿼터 포함(⑦).</td></tr>
+    <tr><td>AI 채색 도구 (오픈 베타)</td><td>홈 배너·카드로 노출</td><td><span class=&quot;tag red&quot;>↩ 제거</span></td><td>디자인 요소일 뿐 도입 계획 없음. 배너·카드 제거(또는 비활성).</td></tr>
+    <tr><td>AI 자동 생성 (BETA)</td><td>홈 바로가기 카드로 노출</td><td><span class=&quot;tag red&quot;>↩ 제거</span></td><td>미도입 기능. 진입점 제거.</td></tr>
+    <tr><td>템플릿</td><td>메뉴만 (준비 중)</td><td><span class=&quot;tag&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d)&quot;>◷ 추후 기획</span></td><td>세부 기획 미정. 별도 기획 후 구현 — 현재는 빈 메뉴 유지 가능.</td></tr>
+    <tr><td>에셋 라이브러리 (개인)</td><td>메뉴만 (준비 중)</td><td><span class=&quot;tag&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d)&quot;>◷ 추후 기획</span></td><td>6개 카테고리 등 세부 기획 필요. 본 SB ⑤는 설계 방향, 구현은 추후.</td></tr>
+    <tr><td>팀 에셋 라이브러리</td><td>메뉴만 (준비 중)</td><td><span class=&quot;tag&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d)&quot;>◷ 추후 기획</span></td><td>개인 에셋과 분리된 팀 공용. 세부 기획 후 구현.</td></tr>
+    <tr><td>로그인 소셜 채널</td><td>Google·Apple·Kakao 3종</td><td><span class=&quot;tag&quot; style=&quot;background:var(--gold-soft);color:var(--gold-d)&quot;>◷ 기획 추가</span></td><td>Naver 추가하여 4종으로 확장 (기획 결정). 순서: Google·Apple·Kakao·Naver.</td></tr>
+    <tr><td>도메인 체계</td><td>app/platform/maker.playtoon.studio</td><td><span class=&quot;tag ok&quot;>✓ 유지</span></td><td>워크스페이스 app(/workspace 경로)·플랫폼 platform·메이커 maker. (.com 미확보, .studio 확정)</td></tr>
+  </table>
+
+  <div class=&quot;note red&quot;><b>제거 우선.</b> AI 채색 도구·AI 자동 생성은 도입 계획이 없는데 홈 전면에 노출되어 있다. 사용자 혼선을 막기 위해 우선 제거(또는 명확한 &quot;준비 중&quot; 비활성 처리) 대상이다.</div>
+  <div class=&quot;note warn&quot;><b>추후 기획 3종.</b> 템플릿·에셋 라이브러리·팀 에셋 라이브러리는 현재 개발 시간 제약으로 메뉴만 있는 상태다. 빈 메뉴를 유지하되, 각각 별도 세부 기획서를 작성한 뒤 구현한다. 본 SB의 해당 섹션(④·⑤)은 설계 방향 참고용이며 최종 명세가 아니다.</div>
+  <div class=&quot;note&quot;><b>정합 확인 권장.</b> ✓ 유지 항목도 세부 흐름(팀 멤버 권한·초대, 요금제 진입 등)이 기획과 어긋나지 않았는지 디자이너·기획 검토를 권장한다.</div>
+</section>
+
+<footer class=&quot;ft&quot;>
+  <b>워크스페이스 화면 SB · N-4 · V1.0.0</b> · Playtoon Workspace · 통합 IA V1.3.0 2장 정합(제작 환경 허브 / 7개 영역 + 에디터 진입 / 운영 화면 제외 / L1 협업 권한 / SSO 공유) · 운영은 어드민(N-1·N-2), 독자 결제는 코인게이트(N-3)
+</footer>
+`;
+
+(function(){
+  var nav=document.getElementById('nav'), main=document.getElementById('main');
+  (window.SB_NAV||[]).forEach(function(g){
+    var h=document.createElement('h6');h.textContent=g.group;nav.appendChild(h);
+    g.items.forEach(function(it){
+      var a=document.createElement('a');a.href='#'+it.id;a.dataset.id=it.id;
+      a.innerHTML='<span class=&quot;n&quot;>'+it.n+'</span>'+it.label;
+      nav.appendChild(a);
+    });
+  });
+  main.innerHTML=window.SB_BODY||'';
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  var secs=links.map(function(a){return document.getElementById(a.dataset.id);}).filter(Boolean);
+  function spy(){
+    var y=window.scrollY+120,cur=secs[0];
+    secs.forEach(function(s){if(s&amp;&amp;s.offsetTop<=y)cur=s;});
+    links.forEach(function(a){a.classList.toggle('on',cur&amp;&amp;a.dataset.id===cur.id);});
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+  links.forEach(function(a){a.addEventListener('click',function(e){
+    e.preventDefault();var t=document.getElementById(a.dataset.id);
+    if(t)window.scrollTo({top:t.offsetTop-72,behavior:'smooth'});
+  });});
+})();
+</script>
+</body>
+</html>
+" style="display:none"></iframe>
+<iframe class="frame" id="fr_n5" title="N-5 DB·API 명세" srcdoc="<!DOCTYPE html>
+<html lang=&quot;ko&quot;>
+<head>
+<meta charset=&quot;UTF-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+<title>DB·API 명세 V1.3.0 · N-5</title>
+<link href=&quot;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css&quot; rel=&quot;stylesheet&quot;>
+<style>
+:root{
+  --red:#DC3545; --red-d:#B02A37; --red-soft:#FBE9EB;
+  --maroon:#6B1F1F; --maroon-d:#4E1616;
+  --lav:#A99DE4; --lav-soft:#EEEBFA; --lav-d:#8273C9;
+  --teal:#1D9E75; --teal-soft:#E1F5EE; --teal-d:#0F6E56;
+  --coral:#FB923C; --coral-soft:#FFEDD5; --coral-d:#9A3412;
+  --gold:#FACC15; --gold-d:#A77B00; --gold-soft:#FEF7D6;
+  --blue:#2D6FB8; --blue-soft:#E4EEF8; --blue-d:#1E5288;
+  --ink:#1A1417; --ink-2:#544A4D; --ink-3:#8A8084;
+  --line:#E7E2E4; --line-2:#F1EEEF;
+  --bg:#FAF8F9; --surf:#FFFFFF; --surf-2:#F6F3F5;
+  --ok:#1A7F52; --ok-soft:#E3F3EB; --warn:#C77700; --warn-soft:#FBEFD8;
+  --r-s:6px; --r:10px; --r-l:16px;
+  --sh-s:0 1px 2px rgba(26,20,23,.06);
+  --sh:0 4px 16px rgba(26,20,23,.08);
+  --font:&quot;Pretendard Variable&quot;,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --mono:&quot;SFMono-Regular&quot;,Consolas,&quot;Liberation Mono&quot;,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-feature-settings:&quot;ss01&quot;,&quot;tnum&quot;}
+::selection{background:var(--blue);color:#fff}
+
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line);height:60px;display:flex;align-items:center;gap:16px;padding:0 22px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em}
+.brand .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--ink));display:grid;place-items:center;color:#fff;font-size:15px;font-weight:800;box-shadow:var(--sh-s)}
+.brand .nm{font-size:15.5px}
+.brand .nm small{display:block;font-size:10.5px;font-weight:600;color:var(--ink-3);letter-spacing:.02em;line-height:1}
+.topbar .ver{margin-left:6px;font-size:11px;font-weight:700;color:var(--blue-d);background:var(--blue-soft);padding:3px 9px;border-radius:999px}
+.topbar .sp{flex:1}
+.topbar .crumb{font-size:12.5px;color:var(--ink-3);font-weight:600}
+.topbar .crumb b{color:var(--ink)}
+
+.wrap{display:grid;grid-template-columns:256px 1fr;min-height:calc(100vh - 60px)}
+.side{border-right:1px solid var(--line);background:var(--surf);padding:20px 14px;position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto}
+.side h6{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase;margin:18px 10px 8px}
+.side h6:first-child{margin-top:0}
+.side a{display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:var(--r-s);font-size:13px;font-weight:600;color:var(--ink-2);text-decoration:none;transition:.14s;cursor:pointer}
+.side a .n{width:18px;height:18px;border-radius:5px;background:var(--surf-2);color:var(--ink-3);font-size:10px;font-weight:800;display:grid;place-items:center;flex:none}
+.side a:hover{background:var(--blue-soft);color:var(--blue-d)}
+.side a.on{background:var(--ink);color:#fff}
+.side a.on .n{background:rgba(255,255,255,.22);color:#fff}
+.main{padding:34px 40px 90px;max-width:1080px}
+
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d);background:var(--blue-soft);padding:5px 11px;border-radius:999px;margin-bottom:14px}
+h1.t{font-size:30px;font-weight:800;letter-spacing:-.025em;line-height:1.2;margin-bottom:10px}
+h1.t .accent{color:var(--blue-d)}
+.lead{font-size:15px;color:var(--ink-2);max-width:64ch;margin-bottom:8px}
+h2.s{font-size:20px;font-weight:800;letter-spacing:-.02em;margin:42px 0 14px;padding-top:18px;display:flex;align-items:center;gap:10px}
+h2.s .bar{width:4px;height:20px;border-radius:2px;background:var(--blue)}
+h3.ss{font-size:15px;font-weight:800;margin:24px 0 9px;color:var(--maroon);font-family:var(--mono)}
+p.tx{font-size:14px;color:var(--ink-2);margin:8px 0;max-width:74ch}
+.section{scroll-margin-top:80px;margin-bottom:8px}
+.divider{height:1px;background:var(--line);margin:40px 0}
+
+.card{background:var(--surf);border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--sh-s)}
+.pad{padding:22px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--surf-2);color:var(--ink-2);border:1px solid var(--line)}
+.tag.red{background:var(--red-soft);color:var(--red-d);border-color:transparent}
+.tag.lav{background:var(--lav-soft);color:var(--lav-d);border-color:transparent}
+.tag.teal{background:var(--teal-soft);color:var(--teal-d);border-color:transparent}
+.tag.coral{background:var(--coral-soft);color:var(--coral-d);border-color:transparent}
+.tag.blue{background:var(--blue-soft);color:var(--blue-d);border-color:transparent}
+.tag.gold{background:var(--gold-soft);color:var(--gold-d);border-color:transparent}
+.tag.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.tag.new{background:var(--red);color:#fff;border-color:transparent}
+.tag.mod{background:var(--gold);color:var(--ink);border-color:transparent}
+
+.note{border-left:3px solid var(--blue);background:var(--blue-soft);padding:13px 16px;border-radius:0 var(--r) var(--r) 0;font-size:13px;color:var(--blue-d);margin:14px 0}
+.note b{color:var(--blue-d)}
+.note.warn{border-color:var(--gold);background:var(--gold-soft);color:#6b5200}
+.note.warn b{color:#6b5200}
+.note.red{border-color:var(--red);background:var(--red-soft);color:var(--maroon-d)}
+.note.red b{color:var(--maroon)}
+.note.teal{border-color:var(--teal);background:var(--teal-soft);color:var(--teal-d)}
+.note.teal b{color:var(--teal-d)}
+
+table.tb{width:100%;border-collapse:collapse;font-size:12.5px;background:var(--surf);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:12px 0}
+table.tb th{background:var(--surf-2);text-align:left;padding:10px 12px;font-size:11px;font-weight:800;color:var(--ink-2);letter-spacing:.02em;border-bottom:1px solid var(--line)}
+table.tb td{padding:9px 12px;border-bottom:1px solid var(--line-2);color:var(--ink-2);vertical-align:top}
+table.tb tr:last-child td{border-bottom:none}
+table.tb code{font-family:var(--mono);font-size:11.5px;background:var(--surf-2);padding:1px 5px;border-radius:4px;color:var(--maroon)}
+table.tb .pk{color:var(--red-d);font-weight:800}
+table.tb .fk{color:var(--blue-d);font-weight:700}
+table.tb .nn{color:var(--ink-3)}
+
+pre.code{background:#16121A;color:#EDE8EA;font-family:var(--mono);font-size:12px;line-height:1.7;padding:18px 20px;border-radius:var(--r);overflow-x:auto;margin:12px 0}
+pre.code .k{color:#C9A4FF}pre.code .s{color:#FFD66B}pre.code .c{color:#7C7480}pre.code .t{color:#6BD6A8}pre.code .n{color:#7FB5FF}
+
+.method{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:5px;color:#fff;margin-right:8px;min-width:54px;text-align:center}
+.method.get{background:var(--teal)}
+.method.post{background:var(--blue)}
+.method.patch{background:var(--coral-d)}
+.method.del{background:var(--red)}
+.ep{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12.5px;padding:10px 13px;border:1px solid var(--line);border-radius:var(--r-s);background:var(--surf);margin:7px 0;color:var(--ink)}
+.ep .path{font-weight:600}
+.ep .desc{margin-left:auto;font-family:var(--font);font-size:11.5px;color:var(--ink-3);font-weight:500}
+
+ul.spec{list-style:none;margin:10px 0}
+ul.spec li{position:relative;padding:7px 0 7px 24px;font-size:13.5px;color:var(--ink-2);border-bottom:1px solid var(--line-2)}
+ul.spec li:last-child{border-bottom:none}
+ul.spec li::before{content:&quot;&quot;;position:absolute;left:4px;top:14px;width:7px;height:7px;border-radius:2px;background:var(--blue);transform:rotate(45deg)}
+ul.spec li b{color:var(--ink)}
+
+.erd{background:#16121A;border-radius:var(--r);padding:18px;overflow-x:auto;margin:12px 0}
+.erd pre{font-family:var(--mono);font-size:11.5px;line-height:1.6;color:#C9C2CC;white-space:pre}
+.erd .e{color:#FFD66B;font-weight:700}
+.erd .r{color:#6BD6A8}
+
+footer.ft{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3)}
+footer.ft b{color:var(--ink-2)}
+</style>
+</head>
+<body>
+<div class=&quot;topbar&quot;>
+  <div class=&quot;brand&quot;>
+    <div class=&quot;logo&quot;>DB</div>
+    <div class=&quot;nm&quot;>Playtoon Data Contract<small>DB·API 명세 (N-5)</small></div>
+  </div>
+  <span class=&quot;ver&quot;>V1.3.0</span>
+  <div class=&quot;sp&quot;></div>
+  <div class=&quot;crumb&quot;>통합 IA V1.3.0 · DDL + OpenAPI</div>
+</div>
+<div class=&quot;wrap&quot;>
+  <nav class=&quot;side&quot; id=&quot;nav&quot;></nav>
+  <main class=&quot;main&quot; id=&quot;main&quot;></main>
+</div>
+<script>
+window.SB_NAV = [
+  { group:&quot;개요&quot;, items:[
+    { id:&quot;overview&quot;, n:&quot;0&quot;, label:&quot;문서 개요 · 결정 사항&quot; },
+    { id:&quot;erd&quot;,      n:&quot;E&quot;, label:&quot;V1.3.0 변경 ERD&quot; },
+  ]},
+  { group:&quot;DDL · 신규/변경&quot;, items:[
+    { id:&quot;price&quot;,    n:&quot;1&quot;, label:&quot;가격 2단계 (분리 컬럼)&quot; },
+    { id:&quot;delegation&quot;,n:&quot;2&quot;, label:&quot;DELEGATION 테이블&quot; },
+    { id:&quot;review&quot;,   n:&quot;3&quot;, label:&quot;검수 상태 · Audit Log&quot; },
+    { id:&quot;coin&quot;,     n:&quot;4&quot;, label:&quot;코인·충전·환불 (N-3)&quot; },
+  ]},
+  { group:&quot;API · OpenAPI&quot;, items:[
+    { id:&quot;api-admin&quot;, n:&quot;5&quot;, label:&quot;어드민 운영 API&quot; },
+    { id:&quot;api-deleg&quot;, n:&quot;6&quot;, label:&quot;위임 API&quot; },
+    { id:&quot;api-coin&quot;,  n:&quot;7&quot;, label:&quot;코인·환불 API&quot; },
+  ]},
+  { group:&quot;레퍼런스&quot;, items:[
+    { id:&quot;enum&quot;, n:&quot;N&quot;, label:&quot;Enum · 상태값&quot; },
+    { id:&quot;open&quot;, n:&quot;Q&quot;, label:&quot;미결 · 다음 단계&quot; },
+  ]},
+];
+
+window.SB_BODY = `
+
+<section class=&quot;section&quot; id=&quot;overview&quot;>
+  <span class=&quot;eyebrow&quot;>Data Contract · N-5 · IA V1.3.0</span>
+  <h1 class=&quot;t&quot;>DB · API 명세 <span class=&quot;accent&quot;>V1.3.0</span></h1>
+  <p class=&quot;lead&quot;>N-1~N-4 화면 SB가 전제하는 데이터 계약. 기존 업로드 DB 스키마(19테이블)를 기준으로, V1.3.0 어드민 일원화에서 새로 필요한 가격 2단계·위임·검수·코인 결제 스키마와 어드민 운영 API를 정의한다. 개발 착수의 기준 문서.</p>
+
+  <div class=&quot;grid g3&quot; style=&quot;margin-top:20px&quot;>
+    <div class=&quot;card pad&quot;>
+      <div class=&quot;tag blue&quot;>결정 사항 (확정)</div>
+      <ul class=&quot;spec&quot; style=&quot;margin-top:8px&quot;>
+        <li>가격 = <b>분리 컬럼</b> (proposed/confirmed)</li>
+        <li>위임 = <b>독립 DELEGATION 테이블</b></li>
+        <li>산출 = 단일 HTML (DDL+OpenAPI)</li>
+        <li>DB = PostgreSQL 기준 DDL</li>
+      </ul>
+    </div>
+    <div class=&quot;card pad&quot;>
+      <div class=&quot;tag teal&quot;>기준 스키마 (기존)</div>
+      <ul class=&quot;spec&quot; style=&quot;margin-top:8px&quot;>
+        <li><code>Series · Episodes</code></li>
+        <li><code>Interactive_Elements</code></li>
+        <li><code>Asset_Ledgers · Transaction_History</code></li>
+        <li><code>User_Wallets · Partners · Contracts</code></li>
+      </ul>
+    </div>
+    <div class=&quot;card pad&quot;>
+      <div class=&quot;tag red&quot;>범례</div>
+      <ul class=&quot;spec&quot; style=&quot;margin-top:8px&quot;>
+        <li><span class=&quot;tag new&quot;>NEW</span> V1.3.0 신규</li>
+        <li><span class=&quot;tag mod&quot;>MOD</span> 기존 변경</li>
+        <li>PK = 빨강 · FK = 파랑</li>
+        <li>수치 정책값은 별도(N-3b)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class=&quot;note&quot;><b>이 문서의 위치.</b> N-1(어드민 작가)·N-2(위임)·N-3a/b(코인)·N-4(워크스페이스)가 화면·흐름이라면, N-5는 그것들이 읽고 쓰는 테이블·컬럼·엔드포인트를 확정한다. 화면 SB와 충돌 시 본 문서의 데이터 계약이 우선한다.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;erd&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>V1.3.0 변경 ERD</h2>
+  <p class=&quot;tx&quot;>V1.3.0에서 추가·변경되는 핵심 관계만. 회색 테이블은 기존, 강조는 신규/변경.</p>
+  <div class=&quot;erd&quot;><pre><span class=&quot;e&quot;>Series</span> ──1:N── <span class=&quot;e&quot;>Episodes</span> ──1:N── <span class=&quot;e&quot;>Interactive_Elements</span>
+  │                  │ <span class=&quot;r&quot;>+proposed/confirmed_price (MOD)</span>  │ <span class=&quot;r&quot;>+proposed/confirmed_price (MOD)</span>
+  │                  │                          │
+  │                  └──────────┬───────────────┘
+  │                             │
+  │                      <span class=&quot;e&quot;>Review_Logs (NEW)</span> ── 검수 상태·이력
+  │
+  <span class=&quot;e&quot;>Authors</span> ──1:N── <span class=&quot;e&quot;>DELEGATION (NEW)</span> ──N:1── <span class=&quot;e&quot;>TEAM_MEMBERSHIP</span>
+                          │ delegator / delegatee / scope / actions
+                          └── <span class=&quot;e&quot;>Audit_Logs (NEW)</span> ── ISSUE/REVOKE/USE/PRICE_CONFIRM
+
+<span class=&quot;e&quot;>User_Wallets</span> ──1:N── <span class=&quot;e&quot;>Asset_Ledgers</span> ──N:M── <span class=&quot;e&quot;>Transaction_History</span>
+                                              │ ledger_usage_json
+              <span class=&quot;e&quot;>Charge_Products (NEW)</span> ──┐         │
+              <span class=&quot;e&quot;>Refunds (NEW)</span> ───────────┴─────────┘ 역추적</pre></div>
+</section>
+
+<div class=&quot;divider&quot;></div>
+
+<section class=&quot;section&quot; id=&quot;price&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>1. 가격 2단계 (분리 컬럼) <span class=&quot;tag mod&quot; style=&quot;margin-left:6px&quot;>MOD</span></h2>
+  <p class=&quot;tx&quot;>작가 희망가(proposed) → 운영 확정가(confirmed)를 별도 컬럼으로 보존한다. 제안가가 덮어쓰이지 않아 Audit·분쟁 대응이 가능하다. <code>Episodes</code>(본편가)와 <code>Interactive_Elements</code>(게이트가) 둘 다 동일 패턴.</p>
+  <h3 class=&quot;ss&quot;>Episodes (변경)</h3>
+  <pre class=&quot;code&quot;><span class=&quot;k&quot;>ALTER TABLE</span> Episodes
+  <span class=&quot;k&quot;>ADD COLUMN</span> proposed_price   <span class=&quot;t&quot;>INTEGER</span>,           <span class=&quot;c&quot;>-- 작가 희망가 (PT)</span>
+  <span class=&quot;k&quot;>ADD COLUMN</span> confirmed_price  <span class=&quot;t&quot;>INTEGER</span>,           <span class=&quot;c&quot;>-- 운영 확정가 (NULL=미확정)</span>
+  <span class=&quot;k&quot;>ADD COLUMN</span> price_status     <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>12</span>) <span class=&quot;k&quot;>DEFAULT</span> <span class=&quot;s&quot;>'PROPOSED'</span>,
+  <span class=&quot;k&quot;>ADD COLUMN</span> price_confirmed_by <span class=&quot;t&quot;>BIGINT</span> <span class=&quot;k&quot;>REFERENCES</span> Users(id),
+  <span class=&quot;k&quot;>ADD COLUMN</span> price_confirmed_at <span class=&quot;t&quot;>TIMESTAMPTZ</span>;
+<span class=&quot;c&quot;>-- 기존 price_cash 는 confirmed_price 로 마이그레이션 후 deprecated</span>
+<span class=&quot;c&quot;>-- 독자 노출가 = confirmed_price (NULL이면 판매 불가)</span></pre>
+  <h3 class=&quot;ss&quot;>Interactive_Elements (변경)</h3>
+  <pre class=&quot;code&quot;><span class=&quot;k&quot;>ALTER TABLE</span> Interactive_Elements
+  <span class=&quot;k&quot;>ADD COLUMN</span> proposed_price   <span class=&quot;t&quot;>INTEGER</span>,           <span class=&quot;c&quot;>-- 작가 희망가 (코인)</span>
+  <span class=&quot;k&quot;>ADD COLUMN</span> confirmed_price  <span class=&quot;t&quot;>INTEGER</span>,           <span class=&quot;c&quot;>-- 운영 확정가</span>
+  <span class=&quot;k&quot;>ADD COLUMN</span> price_status     <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>12</span>) <span class=&quot;k&quot;>DEFAULT</span> <span class=&quot;s&quot;>'PROPOSED'</span>;
+<span class=&quot;c&quot;>-- element_id(product_id) 는 에디터 발행분, 가격은 어드민에서 부여</span></pre>
+  <table class=&quot;tb&quot;>
+    <tr><th>컬럼</th><th>타입</th><th>의미</th><th>주체</th></tr>
+    <tr><td class=&quot;code&quot;>proposed_price</td><td>INTEGER</td><td>작가 희망가 (제안)</td><td>작가 (N-1)</td></tr>
+    <tr><td class=&quot;code&quot;>confirmed_price</td><td>INTEGER</td><td>운영 확정가 · NULL=미확정</td><td>운영 (N-1 STEP5)</td></tr>
+    <tr><td class=&quot;code&quot;>price_status</td><td>VARCHAR</td><td>PROPOSED / CONFIRMED</td><td>시스템</td></tr>
+    <tr><td class=&quot;code&quot;>price_confirmed_by/at</td><td>BIGINT/TS</td><td>확정자·확정시각</td><td>Audit</td></tr>
+  </table>
+  <div class=&quot;note warn&quot;><b>독자 노출가 규칙.</b> 플랫폼(N-3)은 항상 <code>confirmed_price</code>만 읽는다. <code>confirmed_price IS NULL</code>이면 미확정 → 판매 불가(게이트 비활성). proposed는 어드민 검수 화면에서만 참조용으로 노출.</div>
+  <div class=&quot;note&quot;><b>가격 변경 이력.</b> 운영이 confirmed_price를 수정하면 Audit_Logs에 PRICE_CONFIRM 이벤트(proposed→confirmed, 사유)를 기록한다(섹션 3).</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;delegation&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>2. DELEGATION 테이블 <span class=&quot;tag new&quot; style=&quot;margin-left:6px&quot;>NEW</span></h2>
+  <p class=&quot;tx&quot;>위임을 독립 테이블로 둔다. 시한·범위·액션·상태를 가진 토큰 모델(N-2 6대 원칙 정합). 발급·사용 모두 어드민.</p>
+  <pre class=&quot;code&quot;><span class=&quot;k&quot;>CREATE TABLE</span> DELEGATION (
+  id              <span class=&quot;t&quot;>BIGSERIAL</span> <span class=&quot;k&quot;>PRIMARY KEY</span>,
+  delegation_code <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>16</span>) <span class=&quot;k&quot;>UNIQUE NOT NULL</span>,   <span class=&quot;c&quot;>-- 'D-2431'</span>
+  delegator_id    <span class=&quot;t&quot;>BIGINT</span> <span class=&quot;k&quot;>NOT NULL REFERENCES</span> Authors(id),  <span class=&quot;c&quot;>-- 발급자 P-2</span>
+  delegatee_id    <span class=&quot;t&quot;>BIGINT</span> <span class=&quot;k&quot;>NOT NULL REFERENCES</span> Users(id),    <span class=&quot;c&quot;>-- 수령자 P-3</span>
+  team_id         <span class=&quot;t&quot;>BIGINT</span> <span class=&quot;k&quot;>NOT NULL REFERENCES</span> Teams(id),
+  scope_type      <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>10</span>) <span class=&quot;k&quot;>NOT NULL</span>,             <span class=&quot;c&quot;>-- 'ALL' | 'SERIES'</span>
+  scope_series_ids <span class=&quot;t&quot;>BIGINT</span>[] ,                          <span class=&quot;c&quot;>-- scope_type=SERIES 일 때</span>
+  actions         <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>32</span>)[] <span class=&quot;k&quot;>NOT NULL</span>,           <span class=&quot;c&quot;>-- P-6 액션 배열</span>
+  starts_at       <span class=&quot;t&quot;>TIMESTAMPTZ</span> <span class=&quot;k&quot;>NOT NULL</span>,
+  expires_at      <span class=&quot;t&quot;>TIMESTAMPTZ</span> <span class=&quot;k&quot;>NOT NULL</span>,             <span class=&quot;c&quot;>-- 최대 365일</span>
+  status          <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>10</span>) <span class=&quot;k&quot;>NOT NULL DEFAULT</span> <span class=&quot;s&quot;>'ACTIVE'</span>, <span class=&quot;c&quot;>-- ACTIVE|EXPIRED|REVOKED</span>
+  upload_mode     <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>12</span>) <span class=&quot;k&quot;>DEFAULT</span> <span class=&quot;s&quot;>'delegated'</span>,  <span class=&quot;c&quot;>-- delegated|cp_master</span>
+  reason          <span class=&quot;t&quot;>TEXT</span>,
+  revoked_by      <span class=&quot;t&quot;>BIGINT REFERENCES</span> Users(id),
+  revoked_at      <span class=&quot;t&quot;>TIMESTAMPTZ</span>,
+  created_at      <span class=&quot;t&quot;>TIMESTAMPTZ</span> <span class=&quot;k&quot;>NOT NULL DEFAULT</span> now()
+);
+<span class=&quot;k&quot;>CREATE INDEX</span> idx_deleg_delegatee <span class=&quot;k&quot;>ON</span> DELEGATION(delegatee_id, status);
+<span class=&quot;k&quot;>CREATE INDEX</span> idx_deleg_expires <span class=&quot;k&quot;>ON</span> DELEGATION(expires_at) <span class=&quot;k&quot;>WHERE</span> status=<span class=&quot;s&quot;>'ACTIVE'</span>;</pre>
+  <table class=&quot;tb&quot;>
+    <tr><th>컬럼</th><th>의미</th><th>원칙</th></tr>
+    <tr><td class=&quot;code&quot;>delegator_id</td><td>발급자 (팀장/CP 마스터)</td><td>P-2</td></tr>
+    <tr><td class=&quot;code&quot;>delegatee_id</td><td>수령자 (같은 팀 멤버)</td><td>P-3</td></tr>
+    <tr><td class=&quot;code&quot;>scope_type · scope_series_ids</td><td>위임 범위 (전체/특정 작품)</td><td>P-6</td></tr>
+    <tr><td class=&quot;code&quot;>actions[]</td><td>submit_review·respond_rejection·schedule_publish·edit_publish_history</td><td>P-6</td></tr>
+    <tr><td class=&quot;code&quot;>expires_at</td><td>만료 (최대 365일)</td><td>P-1</td></tr>
+    <tr><td class=&quot;code&quot;>upload_mode</td><td>delegated / cp_master(무위임)</td><td>D-1</td></tr>
+  </table>
+  <div class=&quot;note red&quot;><b>P-4 Author 불변.</b> DELEGATION은 작업 권한만 부여한다. <code>Series.author_id</code>(=팀장)는 절대 변하지 않으며, 대리 작업자는 업로드 시 <code>Episodes.uploader_id</code>에만 기록된다. author≠uploader.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;review&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>3. 검수 상태 · Audit Log <span class=&quot;tag new&quot; style=&quot;margin-left:6px&quot;>NEW</span></h2>
+  <h3 class=&quot;ss&quot;>Episodes 검수 컬럼 (변경)</h3>
+  <pre class=&quot;code&quot;><span class=&quot;k&quot;>ALTER TABLE</span> Episodes
+  <span class=&quot;k&quot;>ADD COLUMN</span> review_status <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>10</span>) <span class=&quot;k&quot;>DEFAULT</span> <span class=&quot;s&quot;>'DRAFT'</span>,  <span class=&quot;c&quot;>-- 5상태</span>
+  <span class=&quot;k&quot;>ADD COLUMN</span> uploader_id   <span class=&quot;t&quot;>BIGINT REFERENCES</span> Users(id), <span class=&quot;c&quot;>-- 대리 작업자(D-3)</span>
+  <span class=&quot;k&quot;>ADD COLUMN</span> submitted_at  <span class=&quot;t&quot;>TIMESTAMPTZ</span>,
+  <span class=&quot;k&quot;>ADD COLUMN</span> reviewed_by   <span class=&quot;t&quot;>BIGINT REFERENCES</span> Users(id);</pre>
+  <h3 class=&quot;ss&quot;>Review_Logs (신규) · 검수 이력</h3>
+  <pre class=&quot;code&quot;><span class=&quot;k&quot;>CREATE TABLE</span> Review_Logs (
+  id           <span class=&quot;t&quot;>BIGSERIAL</span> <span class=&quot;k&quot;>PRIMARY KEY</span>,
+  episode_id   <span class=&quot;t&quot;>BIGINT</span> <span class=&quot;k&quot;>NOT NULL REFERENCES</span> Episodes(id),
+  from_status  <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>10</span>),
+  to_status    <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>10</span>) <span class=&quot;k&quot;>NOT NULL</span>,        <span class=&quot;c&quot;>-- DRAFT→REVIEW→...</span>
+  actor_id     <span class=&quot;t&quot;>BIGINT</span> <span class=&quot;k&quot;>NOT NULL REFERENCES</span> Users(id),
+  reject_reason <span class=&quot;t&quot;>TEXT</span>,
+  created_at   <span class=&quot;t&quot;>TIMESTAMPTZ</span> <span class=&quot;k&quot;>NOT NULL DEFAULT</span> now()
+);</pre>
+  <h3 class=&quot;ss&quot;>Audit_Logs (신규) · 통합 감사</h3>
+  <pre class=&quot;code&quot;><span class=&quot;k&quot;>CREATE TABLE</span> Audit_Logs (
+  id          <span class=&quot;t&quot;>BIGSERIAL</span> <span class=&quot;k&quot;>PRIMARY KEY</span>,
+  event_type  <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>24</span>) <span class=&quot;k&quot;>NOT NULL</span>,   <span class=&quot;c&quot;>-- PRICE_CONFIRM|ISSUE|REVOKE|USE|EXPIRE</span>
+  actor_id    <span class=&quot;t&quot;>BIGINT REFERENCES</span> Users(id),
+  target_type <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>24</span>),            <span class=&quot;c&quot;>-- 'EPISODE'|'ELEMENT'|'DELEGATION'</span>
+  target_id   <span class=&quot;t&quot;>BIGINT</span>,
+  payload     <span class=&quot;t&quot;>JSONB</span>,                  <span class=&quot;c&quot;>-- 이벤트별 상세 (제안→확정 등)</span>
+  created_at  <span class=&quot;t&quot;>TIMESTAMPTZ</span> <span class=&quot;k&quot;>NOT NULL DEFAULT</span> now()
+);
+<span class=&quot;c&quot;>-- PRICE_CONFIRM payload 예: {&quot;proposed&quot;:20,&quot;confirmed&quot;:15,&quot;reason&quot;:&quot;신규작 정책&quot;}</span></pre>
+  <div class=&quot;note&quot;><b>P-5 영구 보존.</b> 위임·가격·검수 이벤트는 Audit_Logs에 누적되며 삭제하지 않는다. 위임 USE 이벤트는 대리 작업 수행 시점·액션·대상을 남긴다.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;coin&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>4. 코인·충전·환불 (N-3) <span class=&quot;tag new&quot; style=&quot;margin-left:6px&quot;>NEW</span></h2>
+  <p class=&quot;tx&quot;>N-3a 소비·N-3b 정책이 쓰는 테이블. 수치 정책값은 placeholder, 구조만 확정.</p>
+  <h3 class=&quot;ss&quot;>Charge_Products (신규) · 충전 상품</h3>
+  <pre class=&quot;code&quot;><span class=&quot;k&quot;>CREATE TABLE</span> Charge_Products (
+  id          <span class=&quot;t&quot;>BIGSERIAL</span> <span class=&quot;k&quot;>PRIMARY KEY</span>,
+  platform    <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>8</span>) <span class=&quot;k&quot;>NOT NULL</span>,    <span class=&quot;c&quot;>-- WEB|IOS|AND (웹/앱 가격차)</span>
+  coin_amount <span class=&quot;t&quot;>INTEGER</span> <span class=&quot;k&quot;>NOT NULL</span>,        <span class=&quot;c&quot;>-- 지급 코인(유료캐시)</span>
+  bonus_coin  <span class=&quot;t&quot;>INTEGER</span> <span class=&quot;k&quot;>DEFAULT</span> <span class=&quot;n&quot;>0</span>,        <span class=&quot;c&quot;>-- 보너스(무료포인트)</span>
+  price_krw   <span class=&quot;t&quot;>INTEGER</span> <span class=&quot;k&quot;>NOT NULL</span>,        <span class=&quot;c&quot;>-- VAT 포함 최종가</span>
+  is_active   <span class=&quot;t&quot;>BOOLEAN</span> <span class=&quot;k&quot;>DEFAULT</span> true
+);</pre>
+  <h3 class=&quot;ss&quot;>Transaction_History (변경) · 차감 기록</h3>
+  <pre class=&quot;code&quot;><span class=&quot;k&quot;>ALTER TABLE</span> Transaction_History
+  <span class=&quot;k&quot;>ADD COLUMN</span> pay_channel    <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>16</span>),    <span class=&quot;c&quot;>-- CARD|MOBILE|EASY|IAP</span>
+  <span class=&quot;k&quot;>ADD COLUMN</span> ledger_usage_json <span class=&quot;t&quot;>JSONB</span>;     <span class=&quot;c&quot;>-- 원장별 차감 net/vat/fee</span>
+<span class=&quot;c&quot;>-- [{ledger_id, type:COUPON|BONUS_POINT|PAID_CASH, used, net, vat, fee}]</span></pre>
+  <h3 class=&quot;ss&quot;>Refunds (신규) · 환불</h3>
+  <pre class=&quot;code&quot;><span class=&quot;k&quot;>CREATE TABLE</span> Refunds (
+  id            <span class=&quot;t&quot;>BIGSERIAL</span> <span class=&quot;k&quot;>PRIMARY KEY</span>,
+  tx_id         <span class=&quot;t&quot;>BIGINT</span> <span class=&quot;k&quot;>NOT NULL REFERENCES</span> Transaction_History(id),
+  refund_type   <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>16</span>) <span class=&quot;k&quot;>NOT NULL</span>,   <span class=&quot;c&quot;>-- UNUSED|MINOR|ERROR (해금전/미성년/오류)</span>
+  refund_paid   <span class=&quot;t&quot;>INTEGER</span> <span class=&quot;k&quot;>NOT NULL</span>,        <span class=&quot;c&quot;>-- 환급 유료분(net+vat)</span>
+  bonus_clawback <span class=&quot;t&quot;>INTEGER</span> <span class=&quot;k&quot;>DEFAULT</span> <span class=&quot;n&quot;>0</span>,       <span class=&quot;c&quot;>-- 보너스 회수</span>
+  status        <span class=&quot;t&quot;>VARCHAR</span>(<span class=&quot;n&quot;>12</span>) <span class=&quot;k&quot;>DEFAULT</span> <span class=&quot;s&quot;>'REQUESTED'</span>,
+  reason        <span class=&quot;t&quot;>TEXT</span>,
+  created_at    <span class=&quot;t&quot;>TIMESTAMPTZ</span> <span class=&quot;k&quot;>NOT NULL DEFAULT</span> now()
+);</pre>
+  <div class=&quot;note warn&quot;><b>환불 역추적.</b> Refunds는 <code>Transaction_History.ledger_usage_json</code>을 역추적해 PAID_CASH 부분만 환급한다(N-3b STEP5). 해금 후 일반 환불은 제한, 미성년 무동의(refund_type=MINOR)는 해금 무관 환급.</div>
+</section>
+
+<div class=&quot;divider&quot;></div>
+
+<section class=&quot;section&quot; id=&quot;api-admin&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>5. 어드민 운영 API</h2>
+  <p class=&quot;tx&quot;>N-1 작가 작업 흐름의 엔드포인트. role 분기는 인증 토큰의 AUTHOR.role로 처리.</p>
+  <h3 class=&quot;ss&quot;>작품·회차·가격</h3>
+  <div class=&quot;ep&quot;><span class=&quot;method post&quot;>POST</span><span class=&quot;path&quot;>/admin/series</span><span class=&quot;desc&quot;>작품 등록 (author 고정)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method post&quot;>POST</span><span class=&quot;path&quot;>/admin/series/{id}/episodes</span><span class=&quot;desc&quot;>회차 업로드 + 본편 희망가</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method patch&quot;>PATCH</span><span class=&quot;path&quot;>/admin/episodes/{id}/price</span><span class=&quot;desc&quot;>희망가 제안 (proposed)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method patch&quot;>PATCH</span><span class=&quot;path&quot;>/admin/elements/{id}/price</span><span class=&quot;desc&quot;>게이트 희망가 제안</span></div>
+  <h3 class=&quot;ss&quot;>검수·가격 확정 (운영 role)</h3>
+  <div class=&quot;ep&quot;><span class=&quot;method post&quot;>POST</span><span class=&quot;path&quot;>/admin/episodes/{id}/submit</span><span class=&quot;desc&quot;>검수 제출 → REVIEW</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method patch&quot;>PATCH</span><span class=&quot;path&quot;>/admin/review/{id}/confirm-price</span><span class=&quot;desc&quot;>운영 가격 확정 (confirmed)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method patch&quot;>PATCH</span><span class=&quot;path&quot;>/admin/review/{id}/status</span><span class=&quot;desc&quot;>승인/반려/보류</span></div>
+  <pre class=&quot;code&quot;><span class=&quot;c&quot;>// POST /admin/series/{id}/episodes — 요청</span>
+{
+  <span class=&quot;n&quot;>&quot;chapter_no&quot;</span>: <span class=&quot;n&quot;>1</span>, <span class=&quot;n&quot;>&quot;sub_title&quot;</span>: <span class=&quot;s&quot;>&quot;빗속의 첫 만남&quot;</span>,
+  <span class=&quot;n&quot;>&quot;proposed_price&quot;</span>: <span class=&quot;n&quot;>300</span>,        <span class=&quot;c&quot;>// 본편 희망가</span>
+  <span class=&quot;n&quot;>&quot;free_release_at&quot;</span>: <span class=&quot;s&quot;>&quot;2026-07-15&quot;</span>,
+  <span class=&quot;n&quot;>&quot;x_delegation_id&quot;</span>: <span class=&quot;s&quot;>&quot;D-2431&quot;</span>     <span class=&quot;c&quot;>// 대리 작업 시 (선택)</span>
+}
+<span class=&quot;c&quot;>// 서버: verify_delegation_permission(x_delegation_id, 'submit_review')</span>
+<span class=&quot;c&quot;>// author_id = 팀장 고정, uploader_id = 토큰의 사용자</span></pre>
+</section>
+
+<section class=&quot;section&quot; id=&quot;api-deleg&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>6. 위임 API</h2>
+  <div class=&quot;ep&quot;><span class=&quot;method post&quot;>POST</span><span class=&quot;path&quot;>/admin/delegations</span><span class=&quot;desc&quot;>위임 발급</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method get&quot;>GET</span><span class=&quot;path&quot;>/admin/delegations</span><span class=&quot;desc&quot;>발급 목록 (발급자 기준)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method get&quot;>GET</span><span class=&quot;path&quot;>/admin/delegations/received</span><span class=&quot;desc&quot;>수령 목록 (대리 작업 탭)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method patch&quot;>PATCH</span><span class=&quot;path&quot;>/admin/delegations/{id}/extend</span><span class=&quot;desc&quot;>연장 (≤365일)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method post&quot;>POST</span><span class=&quot;path&quot;>/admin/delegations/{id}/revoke</span><span class=&quot;desc&quot;>회수 (즉시 무효+알림)</span></div>
+  <pre class=&quot;code&quot;><span class=&quot;c&quot;>// POST /admin/delegations — 요청</span>
+{
+  <span class=&quot;n&quot;>&quot;delegatee_id&quot;</span>: <span class=&quot;n&quot;>5012</span>,
+  <span class=&quot;n&quot;>&quot;scope_type&quot;</span>: <span class=&quot;s&quot;>&quot;SERIES&quot;</span>, <span class=&quot;n&quot;>&quot;scope_series_ids&quot;</span>: [<span class=&quot;n&quot;>1024</span>],
+  <span class=&quot;n&quot;>&quot;actions&quot;</span>: [<span class=&quot;s&quot;>&quot;submit_review&quot;</span>, <span class=&quot;s&quot;>&quot;respond_rejection&quot;</span>],
+  <span class=&quot;n&quot;>&quot;starts_at&quot;</span>: <span class=&quot;s&quot;>&quot;2026-06-10&quot;</span>, <span class=&quot;n&quot;>&quot;expires_at&quot;</span>: <span class=&quot;s&quot;>&quot;2026-07-10&quot;</span>,
+  <span class=&quot;n&quot;>&quot;reason&quot;</span>: <span class=&quot;s&quot;>&quot;7월 첫째 주 출장&quot;</span>
+}
+<span class=&quot;c&quot;>// 검증: delegator=팀장/CP master, delegatee=같은 팀 active</span></pre>
+  <div class=&quot;note&quot;><b>verify_delegation_permission().</b> 모든 대리 작업 요청은 헤더 <code>X-Delegation-Id</code>를 싣고, 백엔드가 (1)status=ACTIVE (2)expires_at 미경과 (3)scope 일치 (4)action 포함을 검증한다. 하나라도 실패 시 403.</div>
+</section>
+
+<section class=&quot;section&quot; id=&quot;api-coin&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>7. 코인·환불 API (N-3)</h2>
+  <div class=&quot;ep&quot;><span class=&quot;method get&quot;>GET</span><span class=&quot;path&quot;>/wallet</span><span class=&quot;desc&quot;>잔액 (캐시/포인트/쿠폰)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method get&quot;>GET</span><span class=&quot;path&quot;>/charge/products</span><span class=&quot;desc&quot;>충전 상품 (platform별)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method post&quot;>POST</span><span class=&quot;path&quot;>/charge</span><span class=&quot;desc&quot;>충전 (원장 생성·VAT 분리)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method post&quot;>POST</span><span class=&quot;path&quot;>/elements/{id}/unlock</span><span class=&quot;desc&quot;>게이트 해금 (차감)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method get&quot;>GET</span><span class=&quot;path&quot;>/transactions</span><span class=&quot;desc&quot;>구매 내역 (가계부형)</span></div>
+  <div class=&quot;ep&quot;><span class=&quot;method post&quot;>POST</span><span class=&quot;path&quot;>/refunds</span><span class=&quot;desc&quot;>환불 신청 (역추적)</span></div>
+  <pre class=&quot;code&quot;><span class=&quot;c&quot;>// POST /elements/{id}/unlock — 차감 (우선순위: 쿠폰→포인트→캐시)</span>
+<span class=&quot;c&quot;>// 응답</span>
+{
+  <span class=&quot;n&quot;>&quot;unlocked&quot;</span>: true,
+  <span class=&quot;n&quot;>&quot;ledger_usage&quot;</span>: [
+    {<span class=&quot;n&quot;>&quot;type&quot;</span>:<span class=&quot;s&quot;>&quot;COUPON&quot;</span>,<span class=&quot;n&quot;>&quot;used&quot;</span>:<span class=&quot;n&quot;>5</span>},
+    {<span class=&quot;n&quot;>&quot;type&quot;</span>:<span class=&quot;s&quot;>&quot;PAID_CASH&quot;</span>,<span class=&quot;n&quot;>&quot;used&quot;</span>:<span class=&quot;n&quot;>10</span>,<span class=&quot;n&quot;>&quot;net&quot;</span>:<span class=&quot;n&quot;>9</span>,<span class=&quot;n&quot;>&quot;vat&quot;</span>:<span class=&quot;n&quot;>1</span>}
+  ],
+  <span class=&quot;n&quot;>&quot;wallet_after&quot;</span>: { <span class=&quot;n&quot;>&quot;paid_cash&quot;</span>:<span class=&quot;n&quot;>90</span>, <span class=&quot;n&quot;>&quot;bonus_point&quot;</span>:<span class=&quot;n&quot;>0</span>, <span class=&quot;n&quot;>&quot;coupon&quot;</span>:<span class=&quot;n&quot;>0</span> }
+}</pre>
+  <div class=&quot;note teal&quot;><b>해금가 = confirmed_price.</b> unlock은 <code>Interactive_Elements.confirmed_price</code>를 차감 기준으로 쓴다. confirmed가 NULL이면 422(미확정 상품). proposed는 절대 결제에 쓰지 않는다.</div>
+</section>
+
+<div class=&quot;divider&quot;></div>
+
+<section class=&quot;section&quot; id=&quot;enum&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>Enum · 상태값</h2>
+  <table class=&quot;tb&quot;>
+    <tr><th>대상</th><th>값</th></tr>
+    <tr><td>price_status</td><td><code>PROPOSED</code> · <code>CONFIRMED</code></td></tr>
+    <tr><td>review_status</td><td><code>DRAFT</code> · <code>REVIEW</code> · <code>REJECT</code> · <code>HOLD</code> · <code>APPROVE</code> · <code>PUBLISH</code></td></tr>
+    <tr><td>delegation.status</td><td><code>ACTIVE</code> · <code>EXPIRED</code> · <code>REVOKED</code></td></tr>
+    <tr><td>delegation.actions</td><td><code>submit_review</code> · <code>respond_rejection</code> · <code>schedule_publish</code> · <code>edit_publish_history</code></td></tr>
+    <tr><td>upload_mode</td><td><code>delegated</code> · <code>cp_master</code></td></tr>
+    <tr><td>asset ledger type</td><td><code>COUPON</code> · <code>BONUS_POINT</code> · <code>PAID_CASH</code></td></tr>
+    <tr><td>pay_channel</td><td><code>CARD</code> · <code>MOBILE</code> · <code>EASY</code> · <code>IAP</code></td></tr>
+    <tr><td>refund_type</td><td><code>UNUSED</code> · <code>MINOR</code> · <code>ERROR</code></td></tr>
+    <tr><td>charge platform</td><td><code>WEB</code> · <code>IOS</code> · <code>AND</code></td></tr>
+    <tr><td>audit event_type</td><td><code>PRICE_CONFIRM</code> · <code>ISSUE</code> · <code>EXTEND</code> · <code>REVOKE</code> · <code>EXPIRE</code> · <code>USE</code></td></tr>
+  </table>
+</section>
+
+<section class=&quot;section&quot; id=&quot;open&quot;>
+  <h2 class=&quot;s&quot;><span class=&quot;bar&quot;></span>미결 · 다음 단계</h2>
+  <table class=&quot;tb&quot;>
+    <tr><th style=&quot;width:30%&quot;>항목</th><th>내용</th><th style=&quot;width:16%&quot;>유형</th></tr>
+    <tr><td>기존 price_cash 마이그레이션</td><td>단일 price_cash → confirmed_price 이관 스크립트·deprecated 시점</td><td><span class=&quot;tag mar&quot;>마이그레이션</span></td></tr>
+    <tr><td>Teams/TEAM_MEMBERSHIP 정합</td><td>워크스페이스(N-4)의 팀 모델과 DELEGATION FK 정합 확인</td><td><span class=&quot;tag blue&quot;>정합</span></td></tr>
+    <tr><td>충전 상품 수치</td><td>coin_amount·bonus·price_krw 실값 (N-3b placeholder)</td><td><span class=&quot;tag gold&quot;>사업</span></td></tr>
+    <tr><td>다중 위임 충돌</td><td>같은 작품·복수 수령자 DELEGATION 동시 ACTIVE 처리</td><td><span class=&quot;tag mar&quot;>정책</span></td></tr>
+    <tr><td>인증·role 토큰 스펙</td><td>AUTHOR.role 분기·SSO 토큰 클레임 (IA E-2)</td><td><span class=&quot;tag blue&quot;>인증</span></td></tr>
+  </table>
+  <div class=&quot;note&quot;><b>다음 작업.</b> 플랫폼 인덱스 통합(N-3a·N-3b + IA)으로 독자/플랫폼 측 문서를 묶으면, 어드민 인덱스와 함께 양대 인덱스 체계가 완성된다. N-1~N-5로 화면·데이터 계약이 모두 정합됐다.</div>
+</section>
+
+<footer class=&quot;ft&quot;>
+  <b>DB·API 명세 V1.3.0 · N-5</b> · Playtoon Data Contract · PostgreSQL DDL + OpenAPI · 가격 2단계(분리 컬럼) · 독립 DELEGATION · 검수/Audit · 코인/충전/환불(N-3) · author≠uploader(P-4) · 화면 SB(N-1~N-4)의 데이터 계약
+</footer>
+`;
+
+(function(){
+  var nav=document.getElementById('nav'), main=document.getElementById('main');
+  (window.SB_NAV||[]).forEach(function(g){
+    var h=document.createElement('h6');h.textContent=g.group;nav.appendChild(h);
+    g.items.forEach(function(it){
+      var a=document.createElement('a');a.href='#'+it.id;a.dataset.id=it.id;
+      a.innerHTML='<span class=&quot;n&quot;>'+it.n+'</span>'+it.label;
+      nav.appendChild(a);
+    });
+  });
+  main.innerHTML=window.SB_BODY||'';
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  var secs=links.map(function(a){return document.getElementById(a.dataset.id);}).filter(Boolean);
+  function spy(){
+    var y=window.scrollY+120,cur=secs[0];
+    secs.forEach(function(s){if(s&amp;&amp;s.offsetTop<=y)cur=s;});
+    links.forEach(function(a){a.classList.toggle('on',cur&amp;&amp;a.dataset.id===cur.id);});
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+  links.forEach(function(a){a.addEventListener('click',function(e){
+    e.preventDefault();var t=document.getElementById(a.dataset.id);
+    if(t)window.scrollTo({top:t.offsetTop-72,behavior:'smooth'});
+  });});
+})();
+</script>
+</body>
+</html>
+" style="display:none"></iframe>
+
+    </div>
+  </section>
+</div>
+<script>
+var DOCS = [{"key": "ia", "title": "통합 정보 구조 (IA)", "ver": "V1.3.0"}, {"key": "n4", "title": "N-4 워크스페이스 화면 SB", "ver": "V1.0.0"}, {"key": "n5", "title": "N-5 DB·API 명세", "ver": "V1.3.0"}];
+var items = document.querySelectorAll('.navitem');
+var cur = document.getElementById('cur');
+var curKey = DOCS[0].key;
+function show(key){
+  curKey = key;
+  DOCS.forEach(function(d){ document.getElementById('fr_'+d.key).style.display=(d.key===key)?'block':'none'; });
+  items.forEach(function(a){ a.classList.toggle('on', a.dataset.key===key); });
+  var d = DOCS.find(function(x){return x.key===key;});
+  cur.innerHTML = d.title + ' <span>'+d.ver+'</span>';
+}
+items.forEach(function(a){ a.addEventListener('click', function(){ show(a.dataset.key); }); });
+document.getElementById('openbtn').addEventListener('click', function(){
+  var fr = document.getElementById('fr_'+curKey);
+  var w = window.open('', '_blank');
+  if(w){ w.document.open(); w.document.write(fr.srcdoc); w.document.close(); }
+});
+</script>
+</body>
+</html>
